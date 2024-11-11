@@ -10,10 +10,14 @@ import {
   Page,
   PageContent,
   PageHeader,
+  Footer,
   Text,
+  Anchor,
 } from "grommet";
 import { deepMerge } from "grommet/utils";
 import CardTemplate from "../Components/CardTemp";
+import TabComponent from "../Components/Tab";
+
 
 const theme = deepMerge(grommet, {
   global: {
@@ -44,7 +48,7 @@ const App = () => {
     <Grommet theme={theme} full themeMode={dark ? "dark" : "light"}>
       <Page>
         <AppBar>
-          <Text size="large">Home</Text>
+          <TabComponent title1={"Home"} title2={"RandomThoughts"} title3={"Entries"} title4={"Contact Me"}/>
           <Button
             a11yTitle={dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
             icon={dark ? <Moon /> : <Sun />}
@@ -67,8 +71,19 @@ const App = () => {
           <PageHeader title="Debugging Life And Code" />
           <Grid columns="medium" gap="large" pad={{ bottom: "large" }}>
             <CardTemplate title={"Anna"} />
+            <CardTemplate title={"Pupsi"} />
+            <CardTemplate title={"4Jäger"} />
+          </Grid>
+          <Grid columns="medium" gap="large" pad={{ bottom: "large" }}>
+            <CardTemplate title={"Srbija"} />
+            <CardTemplate title={"Rubin"} />
+            <CardTemplate title={"Essen"} />
           </Grid>
         </PageContent>
+        <Footer background="brand" pad="medium">
+       <Text>Copyright</Text>
+       <Anchor label="Contact Me" />
+        </Footer>
       </Page>
     </Grommet>
   );
