@@ -10,16 +10,22 @@ import {
   Page,
   PageContent,
   PageHeader,
+  Footer,
   Text,
+  Anchor,
 } from "grommet";
 import { deepMerge } from "grommet/utils";
-
-function EntriesPage(){
-  return(
-    <h1>Entries</h1>
-    );
-}
+import TabComponent from "../Components/Tab";
 
 
+function ThoughtsPage(){
 
-export default EntriesPage
+  
+
+return(
+  <h1>Hallo</h1>
+  ); 
+ }
+
+
+export default ThoughtsPage;

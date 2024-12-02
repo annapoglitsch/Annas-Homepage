@@ -9,7 +9,7 @@ import {
   ResponsiveContext,
 } from "grommet";
 
-export default function CardTemplate  ({ title })  {
+export default function CardTemplate  ({ title, paragraph, footer })  {
     const size = useContext(ResponsiveContext);
     return (
       <Card>
@@ -20,14 +20,11 @@ export default function CardTemplate  ({ title })  {
         </CardHeader>
         <CardBody pad="medium">
           <Paragraph maxLines={size === "small" ? 3 : undefined}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            porttitor non nulla ac vehicula. Aliquam erat volutpat. Mauris auctor
-            faucibus est at mattis. Aliquam a enim ac nisi aliquam consectetur et
-            ac velit. Mauris ut imperdiet libero.
+            {paragraph}
           </Paragraph>
         </CardBody>
         <CardFooter pad="medium" background="background-contrast">
-          Footer
+          {footer}
         </CardFooter>
       </Card>
     );
