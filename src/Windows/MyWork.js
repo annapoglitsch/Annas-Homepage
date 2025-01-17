@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Moon, Sun } from "grommet-icons";
 import {
   Grommet,
@@ -22,10 +22,12 @@ import { deepMerge } from "grommet/utils";
 import TabComponent from "../Components/Tab";
 import CardTemplate from "../Components/CardTemp";
 import { Instagram } from 'grommet-icons';
-import { MailOption } from 'grommet-icons' 
+import { MailOption } from 'grommet-icons';
+import cards from "../static/Card.json"
+import cardsTwo from "../static/Card.json"
 
 function MyWork() {
-  return (
+  return ( 
     <Grommet >
       <Page>
         {/*Header */}
@@ -38,70 +40,29 @@ function MyWork() {
         } alignSelf="center" />
 
         {/*Cards */}
+        <Box direction="column" pad={"medium"} gap={"xlarge"} alignSelf="center">
         <Box direction="row" pad={"medium"} gap={"xlarge"} alignSelf="center">
-          <Card height="medium" width="medium" background="light-1" >
-            <CardHeader pad="medium">Header</CardHeader>
-            <CardBody pad="medium">Body</CardBody>
-            <CardFooter pad={{ horizontal: "small" }} background="light-2" height={"xxsmall"}>
-              <Button> </Button>
-            </CardFooter>
-          </Card>
-
-          <Card height="medium" width="medium" background="light-1">
-            <CardHeader pad="medium">Header</CardHeader>
-            <CardBody pad="medium">Body</CardBody>
-            <CardFooter pad={{ horizontal: "small" }} background="light-2">
-              <Button
-                hoverIndicator
-              />
-              <Button hoverIndicator />
-            </CardFooter>
-          </Card>
-
-          <Card height="medium" width="medium" background="light-1" >
-            <CardHeader pad="medium">Header</CardHeader>
-            <CardBody pad="medium">Body</CardBody>
-            <CardFooter pad={{ horizontal: "small" }} background="light-2">
-              <Button
-                hoverIndicator
-              />
-              <Button hoverIndicator />
-            </CardFooter>
-          </Card>
+          {cards.cards.map(card => {
+            return (<Card height="medium" width="medium" background="light-1" >
+              <CardHeader pad="medium"  weight="bold">{card.header}</CardHeader>
+              <CardBody pad="medium">{card.body}</CardBody>
+              <CardFooter pad={{ horizontal: "small" }} height={"xxsmall"} background="#E2E1CF">
+                {card.footer}
+              </CardFooter>
+            </Card>)
+          })}
         </Box>
         <Box direction="row" pad={"medium"} gap={"xlarge"} alignSelf="center">
-          <Card height="medium" width="medium" background="light-1" >
-            <CardHeader pad="medium">Header</CardHeader>
-            <CardBody pad="medium">Body</CardBody>
-            <CardFooter pad={{ horizontal: "small" }} background="light-2">
-              <Button
-                hoverIndicator
-              />
-              <Button hoverIndicator />
-            </CardFooter>
-          </Card>
-
-          <Card height="medium" width="medium" background="light-1">
-            <CardHeader pad="medium">Header</CardHeader>
-            <CardBody pad="medium">Body</CardBody>
-            <CardFooter pad={{ horizontal: "small" }} background="light-2">
-              <Button
-                hoverIndicator
-              />
-              <Button hoverIndicator />
-            </CardFooter>
-          </Card>
-
-          <Card height="medium" width="medium" background="light-1" >
-            <CardHeader pad="medium">Header</CardHeader>
-            <CardBody pad="medium">Body</CardBody>
-            <CardFooter pad={{ horizontal: "small" }} background="light-2">
-              <Button
-                hoverIndicator
-              />
-              <Button hoverIndicator />
-            </CardFooter>
-          </Card>
+          {cardsTwo.cardsTwo.map(card => {
+            return (<Card height="medium" width="medium" background="light-1" >
+              <CardHeader pad="medium" weight="bold">{card.header}</CardHeader>
+              <CardBody pad="medium">{card.body}</CardBody>
+              <CardFooter pad={{ horizontal: "small" }} height={"xxsmall"} background="#E2E1CF">
+                {card.footer}
+              </CardFooter>
+            </Card>)
+          })}
+        </Box>
         </Box>
         {/*Footer */}
         <Footer height={"xsmall"} background="#E2E1CF" pad="small">
