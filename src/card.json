@@ -1,5 +1,34 @@
 {
-    "card":{[
-        "header": "Hallo"
-    ]}
+    "cards":[{
+        "header": "Bachelor CSDC",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    },
+    {
+        "header": "Bachelor Thesis",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    },
+    {
+        "header": "Bachelor Thesis",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    },
+    {
+        "header": "Bachelor Thesis",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    }
+    ],
+    "cardsTwo":[{
+       "header": "Bachelor CSDC",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    },
+    {
+        "header": "Bachelor Thesis",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    }
+    ]
 }
