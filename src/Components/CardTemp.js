@@ -1,31 +1,39 @@
-import React, {useContext} from "react";
+import React from "react";
 import {
   Card,
   CardHeader,
   CardBody,
   CardFooter,
-  Heading,
-  Paragraph,
-  ResponsiveContext,
+  Box
 } from "grommet";
+import cards from "../static/Card.json"
+import cardsTwo from "../static/Card.json"
 
-export default function CardTemplate  ({ title, paragraph, footer })  {
-    const size = useContext(ResponsiveContext);
+export default function CardTemplate  ()  {
     return (
-      <Card>
-        <CardHeader pad="medium">
-          <Heading level={2} margin="none">
-            {title}
-          </Heading>
-        </CardHeader>
-        <CardBody pad="medium">
-          <Paragraph maxLines={size === "small" ? 3 : undefined}>
-            {paragraph}
-          </Paragraph>
-        </CardBody>
-        <CardFooter pad="medium" background="background-contrast">
-          {footer}
-        </CardFooter>
-      </Card>
+      <Box direction="column" pad={"medium"} gap={"xlarge"} alignSelf="center">
+        <Box direction="row" pad={"medium"} gap={"xlarge"} alignSelf="center">
+          {cards.cards.map(card => {
+            return (<Card height="medium" width="medium" background="light-1" >
+              <CardHeader pad="medium"  weight="bold">{card.header}</CardHeader>
+              <CardBody pad="medium">{card.body}</CardBody>
+              <CardFooter pad={{ horizontal: "small" }} height={"xxsmall"} background="#E2E1CF">
+                {card.footer}
+              </CardFooter>
+            </Card>)
+          })}
+        </Box>
+        <Box direction="row" pad={"medium"} gap={"xlarge"} alignSelf="center">
+          {cardsTwo.cardsTwo.map(card => {
+            return (<Card height="medium" width="medium" background="light-1" >
+              <CardHeader pad="medium" weight="bold">{card.header}</CardHeader>
+              <CardBody pad="medium">{card.body}</CardBody>
+              <CardFooter pad={{ horizontal: "small" }} height={"xxsmall"} background="#E2E1CF">
+                {card.footer}
+              </CardFooter>
+            </Card>)
+          })}
+        </Box>
+        </Box>
     );
   };

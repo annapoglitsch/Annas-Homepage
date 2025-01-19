@@ -1,34 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
   Image,
   Heading,
   Grommet,
-  Header,
   Page,
   PageHeader,
-  Footer,
-  Text,
   Anchor,
   Paragraph,
-  DataTable,
-  Data,
-  Toolbar,
-  DataSearch
 } from "grommet";
-import TabComponent from "../Components/Tab";
-import { Instagram } from 'grommet-icons';
-import { MailOption } from 'grommet-icons'
+import FooterTemp from "../Components/Footer";
+import HeaderTemp from "../Components/Header";
 
-function App() {
+function Home() {
   return (
     <Grommet>
       <Page>
-        <Header background="#E2E1CF" gap={"small"} height={"xsmall"} direction="row" >
-          <Box margin={"medium"}><TabComponent title1={"Home"} title2={"My Work"} title3={"About Me"} title4={"Contact Me"} a11yTitle="Überschriften: Home, My Work, About Me, Contact Me" /></Box>
-          
-          <Box><Text a11yTitle="Anna Poglitsch" alignSelf="end" margin={"small"} size="large" weight={"bold"}>Anna Poglitsch</Text></Box>
-        </Header>
+        <HeaderTemp></HeaderTemp>
         <PageHeader a11yTitle="Welcome" title={
           <Heading size="xlarge" weight={"bold"} color={"#383C34"}>Welcome.</Heading>
         } alignSelf="center" />
@@ -76,23 +64,11 @@ function App() {
           </Box>
         </Box>
 
-        <Footer height={"xsmall"} background="#E2E1CF" pad="small">
-          <Text margin={{ horizontal: "small" }} weight={"bold"} color={"#383C34"} a11yTitle="Copyright © 2025">Copyright © 2025</Text>
-          <Box direction="row" align="center" gap="small">
-            <Instagram color="plain" />
-            <MailOption color="plain" />
-          </Box>
-          <Anchor
-            margin={{ horizontal: "small" }}
-            label="Contact Me"
-            style={{ textDecoration: 'none' }}
-            color={"#383C34"}
-          />
-        </Footer>
+        <FooterTemp></FooterTemp>
       </Page>
     </Grommet>
   );
 }
 
 
-export default App;
+export default Home;
