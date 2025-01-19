@@ -1,0 +1,23 @@
+.containerFooter{
+    background-color: #E2E1CF !important;
+    width: 100%;
+    position: fixed;          
+    bottom: 0;      
+    box-sizing: border-box;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name{
+    padding-top: 15px;
+}
+
+.copyright{
+    font-family: serif !important;
+    font-size: 25px !important;
+    color: #383C34;
+    text-align: right;
+    font-weight: bold;
+    padding-top: 15px;
+}

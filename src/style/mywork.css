@@ -1,0 +1,25 @@
+.main-contentDiv {
+    background-color: #F7F6E3 !important;
+    min-height: 100vh;
+}
+
+.myWorkRow{
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+.workFont{
+    font-family: serif !important;
+    font-size: 100px !important;
+    color: #383C34;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 2%;
+}
+
+.buttonWork{
+    background-color: #E2E1CF;
+    border-color: #E2E1CF;
+    color: black;
+}

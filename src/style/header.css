@@ -1,0 +1,25 @@
+.bg-body-tertiary {
+    background-color: #E2E1CF !important;
+}
+
+.link {
+    font-family: serif !important;
+    font-size: 25px !important;
+    color: #383C34;
+    font-weight: bold;
+}
+
+.containerNav {
+    background-color: #E2E1CF !important;
+    color: #E2E1CF !important;
+    margin-left: 0;
+    width: 100%;
+}
+
+.name {
+    font-family: serif !important;
+    font-size: 25px !important;
+    color: #383C34;
+    text-align: right;
+    font-weight: bold;
+}
