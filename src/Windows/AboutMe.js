@@ -1,12 +1,13 @@
 import React from 'react';
-import {Tabs, Tab} from "@heroui/tabs";
-import cards from "../static/cards.json"
-import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
+import Header from "../Components/Header"
+import Footer from "../Components/Footer"
 
 function AboutMe() {
     const variants = ["solid", "underlined", "bordered", "light"];
     return (
         <div>
+            <Header></Header>
+            <Footer></Footer>
         </div>
     )
 }
