@@ -1,0 +1,43 @@
+.mainButton {
+    color: black !important;
+    background-color: white !important;
+    border-color: white !important;
+}
+
+.mainButton:hover{
+    color: black !important;
+    background-color: white !important;
+    border-color: white !important;
+}
+
+.FormField {
+    font-size: large !important;
+    color: black !important;
+}
+
+.FormField:focus {
+    color: black;
+    box-shadow: none;
+}
+
+.myCustomTab {
+    font-size: 40px;
+    font-weight: bold !important;
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.myCustomTab:active {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.myCustomTab:hover {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.myCustomTab:focus {
+    color: black !important;
+    text-decoration: none !important;
+}
