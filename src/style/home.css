@@ -1,6 +1,7 @@
 .main-content {
     background-color: #F7F6E3 !important;
     min-height: 100vh;
+    overflow-y: auto; 
 }
 
 .welcomeFont {

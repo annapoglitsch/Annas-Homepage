@@ -7,7 +7,7 @@ import "../style/header.css"
 
 function Header() {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary" fixed="top">
+        <Navbar expand="lg" className="bg-body-tertiary">
         <Container className="containerNav" fluid>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

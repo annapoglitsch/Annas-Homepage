@@ -1,7 +1,6 @@
 .containerFooter{
     background-color: #E2E1CF !important;
-    width: 100%;
-    position: fixed;          
+    width: 100%;        
     bottom: 0;      
     box-sizing: border-box;
     height: 60px;

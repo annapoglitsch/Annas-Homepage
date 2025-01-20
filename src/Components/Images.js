@@ -11,16 +11,16 @@ function Images(){
         <Container className="imageContainer">
       <Row className="g-4">
         <Col xs={6} md={4}>
-          <Image className="imagePNG" src={DressImage}/>
-          <p className="image-with-text">Beautiful Dress</p>
+          <Image className="imagePNG" src={"https://heroui.com/images/hero-card-complete.jpeg"}/>
+          <p className="image-with-text">Bitte 1 für Anna</p>
         </Col>
         <Col xs={6} md={4}>
-          <Image src={DressImage} className="imagePNG" />
-          <p className="image-with-text">Beautiful Dress</p>
+          <Image src={"https://heroui.com/images/hero-card-complete.jpeg"} className="imagePNG" />
+          <p className="image-with-text">Bitte 1 für Manu</p>
         </Col>
         <Col xs={6} md={4}>
-          <Image src={DressImage} className="imagePNG" />
-          <p className="image-with-text">Beautiful Dress</p>
+          <Image src={"https://heroui.com/images/hero-card-complete.jpeg"} className="imagePNG" />
+          <p className="image-with-text">Bitte 1 für Stefan</p>
         </Col>
       </Row>
     </Container>
