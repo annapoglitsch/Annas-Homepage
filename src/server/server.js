@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
 
 
 app.post('/contact', (req, res) => {
-  console.log("Received request body:", req.body);  
   const { email, message } = req.body;
 
   if (!email || !message) {
@@ -27,11 +26,9 @@ app.post('/contact', (req, res) => {
 
   const data = { email, message };
   const filePath = path.resolve(__dirname, './static/messages.json');
-  console.log("File path:", filePath);
 
   fs.readFile(filePath, 'utf8', (err, fileData) => {
     if (err) {
-      console.error("Error reading file:", err); 
       return res.status(500).json({ message: 'Failed to read data file' });
     }
     let messages = [];
@@ -39,7 +36,6 @@ app.post('/contact', (req, res) => {
       try {
         messages = JSON.parse(fileData);
       } catch (parseError) {
-        console.error("Error parsing JSON:", parseError); 
         return res.status(500).json({ message: 'Failed to parse data file' });
       }
     }
@@ -47,7 +43,6 @@ app.post('/contact', (req, res) => {
     messages.push(data);
     fs.writeFile(filePath, JSON.stringify(messages, null, 2), 'utf8', (writeError) => {
       if (writeError) {
-        console.error("Error writing to file:", writeError); 
         return res.status(500).json({ message: 'Failed to save data' });
       }
 

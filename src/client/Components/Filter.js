@@ -8,9 +8,9 @@ function FilterTemp() {
     return (
         <Box>
         <Toolbar>
-            <TextInput icon={<Search />} />
-            <DropButton kind="toolbar" icon={<Filter />} />
-            <Button label="Search" primary className="mainButton" size="large"/>
+            <TextInput icon={<Search />} disabled="true"/>
+            <DropButton kind="toolbar" icon={<Filter />} disabled="true" />
+            <Button label="Search" primary className="mainButton" size="large" disabled="true"/>
         </Toolbar>
         </Box>
     )
