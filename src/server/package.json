@@ -1,0 +1,58 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@nextui-org/react": "^2.6.11",
+    "@nextui-org/system": "^2.4.6",
+    "@nextui-org/theme": "^2.4.5",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "framer-motion": "^11.18.0",
+    "grommet": "^2.41.0",
+    "grommet-icons": "^4.12.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "react-scripts": "^5.0.1",
+    "styled-components": "^6.1.13",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "css-loader": "^7.1.2"
+  },
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
