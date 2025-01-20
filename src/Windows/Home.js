@@ -21,9 +21,10 @@ function Home() {
           <Heading size="xlarge" weight={"bold"} color={"#383C34"}>Welcome.</Heading>
         } alignSelf="center" />
         <Box direction="row" gap={"large"} alignSelf="center">
-          <Anchor href="http://localhost:3000/mywork" label="My Work" a11yTitle="Link to my Work" style={{ textDecoration: 'none' }} color={"#383C34"} size="xlarge"></Anchor>
-          <Anchor href="http://localhost:3000/aboutme" label="About Me" a11yTitle="About Me" style={{ textDecoration: 'none' }} color={"#383C34"} size="xlarge"></Anchor>
-          <Anchor href="http://localhost:3000/contact" label="Contact" a11yTitle="Contact Me" style={{ textDecoration: 'none' }} color={"#383C34"} size="xlarge"></Anchor>
+        <Anchor href="http://localhost:3000/mywork" label="Home" a11yTitle="Home" style={{ textDecoration: 'none', fontSize:"30px" }} color={"#383C34"} size="xlarge"></Anchor>
+        <Anchor href="http://localhost:3000/aboutme" label="About Me" a11yTitle="About Me" style={{ textDecoration: 'none', fontSize:"30px"}} color={"#383C34"} size="xlarge"></Anchor>
+          <Anchor href="http://localhost:3000/mywork" label="My Work" a11yTitle="Link to my Work" style={{ textDecoration: 'none', fontSize:"30px" }} color={"#383C34"} size="xlarge"></Anchor>
+          <Anchor href="http://localhost:3000/contact" label="Contact" a11yTitle="Contact Me" style={{ textDecoration: 'none', fontSize:"30px" }} color={"#383C34"} size="xlarge"></Anchor>
         </Box>
         <Box direction="row" gap={"medium"} alignSelf="center" pad={"medium"}>
           <Box direction="column" gap="small">
