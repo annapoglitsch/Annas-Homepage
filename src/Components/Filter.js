@@ -2,6 +2,7 @@ import React from "react";
 import { Toolbar, TextInput, DropButton, Button, Box } from "grommet";
 import { Search} from "grommet-icons";
 import {Filter} from "grommet-icons"
+import "../style/main.css"
 
 function FilterTemp() {
     return (
@@ -9,7 +10,7 @@ function FilterTemp() {
         <Toolbar>
             <TextInput icon={<Search />} />
             <DropButton kind="toolbar" icon={<Filter />} />
-            <Button label="Search" primary style={{color: "black", backgroundColor: "white", borderColor: "white"}} size="large"/>
+            <Button label="Search" primary className="mainButton" size="large"/>
         </Toolbar>
         </Box>
     )

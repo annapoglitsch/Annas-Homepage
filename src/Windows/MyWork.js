@@ -14,7 +14,7 @@ import FilterTemp from "../Components/Filter";
 function MyWork() {
   return ( 
     <Grommet >
-      <Page>
+      <Page style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         {/*Header */}
         <HeaderTemp></HeaderTemp>
         <PageHeader a11yTitle="Let's Talk About Work." title={

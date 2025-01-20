@@ -15,13 +15,13 @@ import FooterTemp from "../Components/Footer";
 function AboutMe() {
   return (
     <Grommet >
-      <Page>
+      <Page style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         {/*Header */}
         <HeaderTemp></HeaderTemp>
         <PageHeader a11yTitle="Welcome" title={
           <Heading size="xlarge" weight={"bold"} color={"#383C34"}>Anna Poglitsch.</Heading>
         } alignSelf="center" />
-        <Box direction="row">
+        <Box direction="row" alignSelf='center'>
           <Image margin={"small"}
             src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
           />
@@ -35,12 +35,6 @@ function AboutMe() {
           Neben meinem Studium, arbeite ich geringfügig bei der ITSV, wo ich Gelerntes in die Realität umsetzen darf. 
           </Paragraph>
         </Box>
-        <Paragraph margin="small">
-            Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.
-          </Paragraph>
         {/*Footer */}
         <FooterTemp></FooterTemp>
       </Page>

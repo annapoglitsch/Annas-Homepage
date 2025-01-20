@@ -1,0 +1,14 @@
+.mainButton {
+    color: black !important;
+    background-color: white !important;
+    border-color: white !important;
+}
+.FormField {
+    font-size: large !important;
+    color: black !important;
+}
+
+.FormField:focus{
+    color: black;
+    box-shadow: none;
+}
