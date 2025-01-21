@@ -1,0 +1,30 @@
+.contactInput{
+    justify-self: center;
+    margin-bottom: 20px;
+}
+
+.buttonSubmit{
+    color: black !important;
+    background-color: white !important;
+    border-color: white !important;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-family: serif;
+    width: auto;
+    height: auto;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.buttonReset{
+    color: black !important;
+    background-color: white !important;
+    border-color: white !important;
+    margin-top: 20px;
+    margin-left: 30px;
+    font-family: serif;
+    width: auto;
+    height: auto;
+    font-size: 25px;
+    font-weight: bold;
+}

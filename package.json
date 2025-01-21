@@ -3,29 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@heroui/card": "^2.2.9",
-    "@heroui/divider": "^2.2.5",
-    "@heroui/image": "^2.2.5",
-    "@heroui/link": "^2.2.7",
-    "@heroui/react": "^2.6.14",
-    "@heroui/system": "^2.4.6",
-    "@heroui/tabs": "^2.2.7",
-    "@heroui/theme": "^2.4.5",
+    "@nextui-org/react": "^2.6.11",
+    "@nextui-org/system": "^2.4.6",
+    "@nextui-org/theme": "^2.4.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.3.3",
-    "framer-motion": "^11.18.1",
-    "react": "^19.0.0",
-    "react-bootstrap": "^2.10.7",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.3",
-    "react-scripts": "5.0.1",
-    "tailwindcss": "^3.4.17",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "framer-motion": "^11.18.0",
+    "grommet": "^2.41.0",
+    "grommet-icons": "^4.12.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "react-scripts": "^5.0.1",
+    "styled-components": "^6.1.13",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "node server.js",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -49,6 +47,12 @@
     ]
   },
   "devDependencies": {
-    "ajv": "^7.2.4"
-  }
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "css-loader": "^7.1.2"
+  },
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
