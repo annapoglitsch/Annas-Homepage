@@ -1,0 +1,25 @@
+.aboutMeTitle{
+    font-weight: 200 !important;
+    color: white;
+    font-family: "Rufina", serif !important;
+}
+
+.aboutMeBox{
+    margin-top: 10%;
+    direction: column;
+    align-self: center;
+    margin-bottom: 3%;
+}
+
+.hobbyText{
+    font-weight: bold;
+    font-size: 60px !important;
+    color: white;
+    margin-bottom: 4%;
+    align-self: center;
+}
+
+.aboutMeImage{
+    border-radius: 50%;
+    object-fit: cover;
+}

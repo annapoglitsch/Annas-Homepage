@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+
+.fontCardStyle {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Rufina", serif;
+}
+
+.cardStyle:hover {
+    border: 4px solid #D6C9B4;
+}
+
+.bodyCardStyle {
+    font-size: 20px;
+    font-family: Roboto;
+}

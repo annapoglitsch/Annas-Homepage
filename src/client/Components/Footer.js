@@ -7,20 +7,19 @@ import {
   } from "grommet";
   import { Instagram } from 'grommet-icons';
   import { MailOption } from 'grommet-icons'
+  import "../style/footer.css"
   
 function FooterTemp(){
     return(
-        <Footer height={"xsmall"} background="#E2E1CF" pad="small">
-          <Text margin={{ horizontal: "small" }} weight={"bold"} style={{fontSize: "30px"}} color={"#383C34"} a11yTitle="Copyright © 2025">Copyright © 2025</Text>
-          <Box direction="row" align="center" gap="small">
+        <Footer  className="footerMain">
+          <Text className="footerText"  a11yTitle="Copyright 2025">Copyright © 2025</Text>
+          <Box direction="row" align="center" gap="small" margin={"30px"}>
             <Instagram color="plain" />
             <MailOption color="plain" />
           </Box>
           <Anchor
-            margin={{ horizontal: "small" }}
+          className="footerText"
             label="Contact Me"
-            style={{ textDecoration: 'none', fontSize: "30px" }}
-            color={"#383C34"}
           />
         </Footer>
     )

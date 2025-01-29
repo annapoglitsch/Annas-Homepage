@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
+.welcomeHome {
+    font-size: 200px !important;
+    font-weight: bold !important;
+    color: white;
+    font-family: "Rufina", serif;
+    text-shadow: 6px 3px 4px #D6C9B4 !important;
+}
+
+.schnörkelSchrift {
+    font-size: 60px !important;
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    letter-spacing: 2px;
+
+}
+
+.headline {
+    font-size: 80px !important;
+    font-weight: bold !important;
+    color: white;
+    font-family: "Rufina", serif;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+    padding-top: 3vh;
+}
+
+.homeParagraph {
+    size: large;
+    color: white;
+    font-size: 30px !important;
+    line-height: 2;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-family: Roboto;
+    margin: none;
+}

@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import App from "./client/App";
-import {Grommet, Header, PageHeader} from 'grommet';
-import { colors } from 'grommet/themes/base';
+import {Grommet} from 'grommet';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const colorTheme = {
   global: {
     colors:{
-      'background': '#F7F6E3',
+      'background': '#2F4156',
       'text': '#546745',
       'footer': '#E2E1CF'
     },

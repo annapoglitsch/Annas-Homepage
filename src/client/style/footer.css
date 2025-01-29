@@ -1,0 +1,39 @@
+.footerMain{
+    background-color: #D6C9B4 !important;
+    direction: row;
+}
+
+.footerText{
+    font-size: 30px !important;
+    font-weight: 300;
+    color: black;
+    font-family: Roboto;
+    margin-left: 30px;
+}
+
+.footerLink{
+    text-decoration: none;
+    font-size: 30px !important;
+    font-weight: 300;
+    color: black;
+    font-family: Roboto;
+    margin-right: 30px;
+}
+
+.hSbIjD{
+    text-decoration: none;
+    font-size: 30px !important;
+    font-weight: 300 !important;
+    color: black !important;
+    font-family: Roboto;
+    margin-right: 30px;
+}
+
+.hSbIjD:hover{
+    text-decoration: none !important;
+    font-size: 30px !important;
+    font-weight: 300;
+    color: black;
+    font-family: Roboto;
+    margin-right: 30px;
+}

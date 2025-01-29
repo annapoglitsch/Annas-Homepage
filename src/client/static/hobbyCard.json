@@ -1,0 +1,18 @@
+{
+    "hobbys":[{
+        "header": "Reading",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    },
+    {
+        "header": "Jungschar",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    },
+    {
+        "header": "Café",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    }
+    ]
+}

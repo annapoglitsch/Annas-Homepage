@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Box, Button, Form, FormField, TextInput, TextArea } from 'grommet';
 import "../style/main.css"
-
+import { colors } from 'grommet/themes/base';
+import "../style/contactme.css"
 function SendMessage() {
 
     const [email, setEmail] = React.useState('');
@@ -34,7 +35,6 @@ function SendMessage() {
         setEmail("");
         setMessage("");
 
-
     }
     return (
         <Box width={"400px"} alignSelf='center'>
@@ -44,14 +44,13 @@ function SendMessage() {
                 onReset={() => setEmail({})}
             >
                 <FormField className="FormField" htmlFor="text-input-id" label="E-Mail" style={{fontSize: "25px", fontWeight:"bold"}}>
-                    <TextInput value={email} id="text-input-id" name="emailField" />
+                    <TextInput value={email} id="text-input-id" name="emailField" className='inputEmail' />
                 </FormField>
             </Form>
             <TextArea
                 name="message"
                 id="textArea"
                 size='xlarge'
-                placeholder="Message"
                 value={message}
                 onChange={event => setMessage(event.target.value)}
             />

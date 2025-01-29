@@ -2,22 +2,14 @@
     color: black !important;
     background-color: white !important;
     border-color: white !important;
+    font-family: Roboto !important;
 }
 
 .mainButton:hover{
     color: black !important;
     background-color: white !important;
     border-color: white !important;
-}
-
-.FormField {
-    font-size: large !important;
-    color: black !important;
-}
-
-.FormField:focus {
-    color: black;
-    box-shadow: none;
+    font-family: Roboto !important;
 }
 
 .myCustomTab {
@@ -40,4 +32,14 @@
 .myCustomTab:focus {
     color: black !important;
     text-decoration: none !important;
+}
+
+.mainPage{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}  
+
+.hDUHbF:hover {
+    box-shadow: 0px 0px 0px 3px #D6C9B4 !important;
 }

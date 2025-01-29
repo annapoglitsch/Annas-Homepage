@@ -1,0 +1,38 @@
+.contactMeTitle {
+    font-weight: 200;
+    color: white;
+    font-family: "Rufina", serif;
+}
+
+.hoGuzK{
+    box-shadow: 0px 0px 0px 0px #D6C9B4 !important;
+}
+
+.labXzn{
+    box-shadow: 0px 0px 0px 0px #D6C9B4 !important;
+}
+
+.hoGuzK:hover{
+    box-shadow: 0px 0px 0px 3px #D6C9B4 !important;
+}
+
+.labXzn:hover{
+    box-shadow: 0px 0px 0px 3px #D6C9B4 !important;
+}
+
+.FormField {
+    font-size: large !important;
+    color: white !important;
+}
+
+.FormField:focus {
+    color: white;
+    box-shadow: none;
+
+}
+
+.inputEmail{
+    font-family: Roboto !important;
+    letter-spacing: 1px;
+}
+
