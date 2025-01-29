@@ -43,7 +43,7 @@ function SendMessage() {
                 onChange={nextValue => setEmail(nextValue)}
                 onReset={() => setEmail({})}
             >
-                <FormField className="FormField" htmlFor="text-input-id" label="E-Mail" style={{fontSize: "25px", fontWeight:"bold"}}>
+                <FormField className="inputLabel" htmlFor="text-input-id" label="E-Mail" >
                     <TextInput value={email} id="text-input-id" name="emailField" className='inputEmail' />
                 </FormField>
             </Form>
@@ -51,6 +51,7 @@ function SendMessage() {
                 name="message"
                 id="textArea"
                 size='xlarge'
+                className='inputText'
                 value={message}
                 onChange={event => setMessage(event.target.value)}
             />

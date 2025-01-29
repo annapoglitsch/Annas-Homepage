@@ -4,19 +4,19 @@
     font-family: "Rufina", serif;
 }
 
-.hoGuzK{
+.hoGuzK {
     box-shadow: 0px 0px 0px 0px #D6C9B4 !important;
 }
 
-.labXzn{
+.labXzn {
     box-shadow: 0px 0px 0px 0px #D6C9B4 !important;
 }
 
-.hoGuzK:hover{
+.hoGuzK:hover {
     box-shadow: 0px 0px 0px 3px #D6C9B4 !important;
 }
 
-.labXzn:hover{
+.labXzn:hover {
     box-shadow: 0px 0px 0px 3px #D6C9B4 !important;
 }
 
@@ -31,8 +31,36 @@
 
 }
 
-.inputEmail{
+.inputEmail {
     font-family: Roboto !important;
     letter-spacing: 1px;
+    font-size: 25px !important;
+    font-weight: 400 !important;
 }
 
+.inputEmail:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: gray;
+}
+
+.inputLabel {
+    font-family: Roboto !important;
+    font-size: 25px;
+    font-weight: 400;
+    color: white;
+}
+
+.daLNjx{
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: gray;
+}
+
+.inputText{
+    font-family: Roboto !important;
+    letter-spacing: 1px;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    color: white !important;
+}
