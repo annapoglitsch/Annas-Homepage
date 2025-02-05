@@ -2,33 +2,38 @@
     "cards":[{
         "header": "Bachelor CSDC",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "read more"
+        "footer": "05.02.2025",
+        "filter": "Hobby"
     },
     {
         "header": "Bachelor Thesis",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "read more"
+        "footer": "04.02.2025",
+        "filter": "Hobby"
     },
     {
         "header": "Bachelor Thesis",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "read more"
+        "footer": "23.01.2025",
+        "filter": "Hobby"
     },
     {
         "header": "Bachelor Thesis",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "read more"
-    }
-    ],
-    "cardsTwo":[{
+        "footer": "02.02.2025",
+        "filter": "Projects"
+    },
+    {
        "header": "Bachelor CSDC",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "read more"
+        "footer": "02.01.2025",
+        "filter": "Projects"
     },
     {
         "header": "Bachelor Thesis",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "read more"
+        "footer": "10.01.2025",
+        "filter": "Projects"
     }
     ]
 }

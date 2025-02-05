@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect} from "react";
 import {
   Grommet,
   Page,
   PageHeader,
   Heading,
-  Box
+  Box,
 } from "grommet";
 import HeaderTemp from "../Components/Header";
 import FooterTemp from "../Components/Footer";
@@ -14,6 +14,14 @@ import "../style/mywork.css"
 import "../style/main.css"
 
 function MyWork() {
+
+    const [searchValue, setSearchValue] = React.useState("");
+    const [filterValue, setFilterValue] = React.useState([]); 
+
+    useEffect(() => {
+      console.log("My Work: ", searchValue, filterValue)
+    }, [searchValue, filterValue])
+
   return ( 
     <Grommet >
       <Page className="mainPage">
@@ -24,10 +32,13 @@ function MyWork() {
         } alignSelf="center" />
         <Box style={{direction: "column", }}gap={"medium"} alignSelf="center">
         <h1 className="searchWork">I want to know something about...</h1>
-        <FilterTemp></FilterTemp>
+
+        <FilterTemp onSearch={setSearchValue} onFilterChange={setFilterValue}></FilterTemp>
         </Box>
         {/*Cards */}
-        <CardTemplate></CardTemplate>
+        <CardTemplate searchValue={searchValue} filterValue={filterValue}></CardTemplate>
+
+
         {/*Footer */}
         <FooterTemp></FooterTemp>
       </Page>

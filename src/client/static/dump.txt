@@ -4,3 +4,9 @@ Von Home die Anchors:
         <Anchor href="http://localhost:3000/aboutme" label="About Me" a11yTitle="About Me" style={{ textDecoration: 'none', fontSize:"30px"}} color={"#383C34"} size="xlarge"></Anchor>
           <Anchor href="http://localhost:3000/mywork" label="My Work" a11yTitle="Link to my Work" style={{ textDecoration: 'none', fontSize:"30px" }} color={"#383C34"} size="xlarge"></Anchor>
           <Anchor href="http://localhost:3000/contact" label="Contact" a11yTitle="Contact Me" style={{ textDecoration: 'none', fontSize:"30px" }} color={"#383C34"} size="xlarge"></Anchor>
+
+          in filter:
+          onChange={(event) => {
+                    setSearchInput(event.target.value)
+                    console.log(event.target.value)
+                }} 
