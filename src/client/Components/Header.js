@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect} from "react";
 import Container from "react-bootstrap/Container"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import "../style/header.css"
+import Button from 'react-bootstrap/Button';
+import { useState } from "react";
 
 function Header() {
+
+  const [language, setLanguage] = useState("English");
+
+  function changeButtonText() {
+    setLanguage(language === "English" ? "Deutsch" : "English");
+  }
+
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
         <Container className="containerNav" fluid>
@@ -18,7 +27,7 @@ function Header() {
               <Nav.Link className="link" href="/contact">Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <h1 className="name ms-auto">Anna Poglitsch</h1>
+          <Button className="buttonHeader" id="ButtonHeader" onClick={changeButtonText}>{language}</Button>
         </Container>
       </Navbar>
     )

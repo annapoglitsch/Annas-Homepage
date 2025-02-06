@@ -12,7 +12,7 @@ function AboutMe(){
             <h1 className="welcomeFont">Anna Poglitsch.</h1>
             <div className="aboutMeContainer">
             <Image className="imagePNG" src={"https://heroui.com/images/hero-card-complete.jpeg"} style={{marginTop: "30px"}}/>
-            <div style={{width: "400px", marginTop: "20px"}}>
+            <div style={{width: "400px", marginTop: "5%"}}>
             <p className="aboutMeText">Lorem ipsum dolor sit amet, 
                 consetetur sadipscing elitr, sed diam nonumy
                  eirmod tempor 

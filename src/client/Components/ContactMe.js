@@ -16,7 +16,7 @@ function ContactMe() {
 
     console.log(data);
 
-    fetch("http://localhost:5000/contact", {
+    fetch("http://localhost:5002/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

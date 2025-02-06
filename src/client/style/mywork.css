@@ -1,5 +1,5 @@
 .main-contentDiv {
-    background-color: #F7F6E3 !important;
+    background-color: #2F4156 !important;
     min-height: 100vh;
 }
 
@@ -11,7 +11,7 @@
 .workFont {
     font-family: serif !important;
     font-size: 100px !important;
-    color: #383C34;
+    color: white;
     font-weight: bold;
     text-align: center;
     padding-top: 6%;
@@ -21,7 +21,7 @@
 .IwantFont {
     font-family: serif !important;
     font-size: 40px !important;
-    color: #383C34;
+    color: white;
     font-weight: bold;
     text-align: center;
 }

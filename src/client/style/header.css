@@ -3,9 +3,9 @@
 }
 
 .link {
-    font-family: serif !important;
+    font-family: Roboto !important;
     font-size: 30px !important;
-    color: #383C34;
+    color: black;
     font-weight: bold;
 }
 
@@ -17,9 +17,9 @@
 }
 
 .name {
-    font-family: serif !important;
+    font-family: Roboto !important;
     font-size: 30px !important;
-    color: #383C34;
+    color: black;
     text-align: right;
     font-weight: bold;
 }

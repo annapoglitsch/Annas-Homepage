@@ -1,39 +1,17 @@
 .card-container {
     height: auto;
     overflow: hidden;
+    width: 100%;
+    min-width: 100%;
+    
 }
 
 .myWorkRow {
-    overflow: hidden;
+    display: flex;
+    width: 100%;
 }
 
-.buttonWork {
-    background-color: #E2E1CF;
-    border-color: #E2E1CF;
-    color: black;
-    margin-top: auto;
-    width: 100px;
-}
 
-.buttonWork:focus {
-    background-color: #E2E1CF;
-    border-color: #E2E1CF;
-    color: black;
-}
-
-.buttonWork:hover {
-
-    background-color: #E2E1CF;
-    border-color: #E2E1CF;
-    color: black;
-}
-
-.buttonWork:disabled{
-
-    background-color: #E2E1CF;
-    border-color: #E2E1CF;
-    color: black;
-}
 .card-body-flex {
     display: flex;
     flex-direction: column;
@@ -41,8 +19,14 @@
     height: 100%;
 }
 
-.text-card{
+.text-card {
     font-family: serif;
     font-weight: bold;
     font-size: 20px;
+}
+
+.cardFooter {
+    background-color: #D6C9B4;
+    width: 100%;
+    font-weight: bold;
 }
