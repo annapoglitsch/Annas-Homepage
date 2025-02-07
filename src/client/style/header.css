@@ -1,25 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
 .bg-body-tertiary {
-    background-color: #E2E1CF !important;
+    background-color: #D6C9B4 !important;
 }
 
 .link {
     font-family: Roboto !important;
     font-size: 30px !important;
     color: black;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .containerNav {
-    background-color: #E2E1CF !important;
-    color: #E2E1CF !important;
+    background-color: #D6C9B4 !important;
+    color: #D6C9B4 !important;
     margin-left: 0;
     width: 100%;
+    margin: 20px;
 }
 
-.name {
+.buttonHeader{
     font-family: Roboto !important;
     font-size: 30px !important;
+    font-weight: 500;
+    background-color: transparent;
     color: black;
-    text-align: right;
-    font-weight: bold;
+    border-color: black;
+    border-width: 2px;
+}
+
+.buttonHeader:hover{
+    font-family: Roboto !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    background-color: transparent;
+    color: black;
+    border-color: black;
+    border-width: 2px;
+}
+
+.buttonHeader:focus-visible{
+    font-family: Roboto !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    background-color: transparent;
+    color: black;
+    border-color: black;
+    border-width: 2px;
+}
+
+.buttonHeader:active{
+    font-family: Roboto !important;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    background-color: transparent !important;
+    color: black !important;
+    border-color: black !important;
+    border-width: 2px;
 }

@@ -1,0 +1,19 @@
+{
+    "hobbyCards": [
+        {
+            "header": "Bachelor CSDC",
+            "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "footer": "11.01.2025"
+        },
+        {
+            "header": "Bachelor Thesis",
+            "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "footer": "02.02.2025"
+        },
+        {
+            "header": "Bachelor Thesis",
+            "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "footer": "23.01.2025"
+        }
+    ]
+}

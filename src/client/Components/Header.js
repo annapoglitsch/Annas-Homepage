@@ -27,7 +27,7 @@ function Header() {
               <Nav.Link className="link" href="/contact">Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <Button className="buttonHeader" id="ButtonHeader" onClick={changeButtonText}>{language}</Button>
+          <Button className="buttonHeader" onClick={changeButtonText} >{language}</Button>
         </Container>
       </Navbar>
     )

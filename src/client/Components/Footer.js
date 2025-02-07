@@ -8,7 +8,7 @@ function Footer() {
     return (
         <Container className="containerFooter" fluid>
             <h1 className="copyright">Copyright © 2025</h1>
-          <NavLink className="link" href="/contact">Contact Me</NavLink>
+          <NavLink className="linkFooter" href="/contact">Contact Me</NavLink>
         </Container>
     )
 }

@@ -1,9 +1,53 @@
-.aboutMeContainer{
+.aboutMeContainer {
     display: flex;
-    justify-content: center; 
+    align-self: center;
     align-items: center;
+    gap: 3%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-.aboutMeText{
-    font-size: 20px;
+.aboutMeText {
+    font-size: 25px;
+    color: white;
+    margin: 0;
+    max-width: 600px;
+}
+
+.imagePNG {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 700px;
+    height: 700px;
+}
+
+.titleFont {
+    font-family: "Rufina", serif !important;
+    font-size: 100px !important;
+    color: white;
+    font-weight: 200 !important;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.aboutMeDiv{
+    margin-top: 10%;
+    direction: column;
+    align-self: center;
+    margin-bottom: 3%;
+}
+
+.aboutMeTitle{
+    font-weight: bold !important;
+    color: white;
+    font-family: "Rufina", serif !important;
+    font-size: 60px;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
