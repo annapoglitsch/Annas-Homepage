@@ -1,7 +1,7 @@
 import React from "react";
 import Form from 'react-bootstrap/Form';
 
-function FilterWork() {
+function EmailField() {
     <Form>
     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
       <Form.Label>Email address</Form.Label>
@@ -9,4 +9,4 @@ function FilterWork() {
     </Form.Group>
     </Form>
 }
-export default FilterWork;
+export default EmailField;

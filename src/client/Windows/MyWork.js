@@ -1,34 +1,32 @@
-import React from "react";
+import React, { useEffect} from "react";
 import Header from "../Components/Header";
 import "../style/mywork.css";
 import Footer from "../Components/Footer";
 import CardWork from "../Components/CardWork";
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-
+import Filter from "../Components/Filter"
 function MyWork() {
+
+    const [searchValue, setSearchValue] = React.useState("");
+    const [filterValue, setFilterValue] = React.useState([]);
+
+    useEffect(() => {
+        console.log("My Work: ", searchValue, filterValue)
+    }, [searchValue, filterValue])
+
     return (
         <div>
-             <Header></Header>
+            <Header></Header>
             <div className="main-contentDiv">
-           
+
                 <h1 className="workFont">Let's Talk About Work.</h1>
                 <h1 className="IwantFont"> I want to know something about...</h1>
-                <Form className="formWork d-flex align-items-center justify-content-center" disabled="true">
-                    <div className="col-auto"> 
-                        <Form.Group className="formGroupWork" controlId="exampleForm.ControlInput1" >
-                            <Form.Control type="text" placeholder="Search" className="formControlWork w-100" disabled="true" />
-                        </Form.Group>
-                    </div>
-                    <div className="col-auto">
-                        <Button className="ButtonWork" variant="primary" type="submit" disabled="true">Search</Button>
-                    </div>
-                </Form>
-
-                <CardWork></CardWork>
+               <Filter onSearch={setSearchValue} onFilterChange={setFilterValue}></Filter>
+                <div className="cardContainerWork">
+                    <CardWork searchValue={searchValue} filterValue={filterValue}></CardWork>
+                </div>
                 <Footer></Footer>
             </div>
-            
+
         </div>
     )
 }

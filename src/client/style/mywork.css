@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
 .main-contentDiv {
     background-color: #2F4156 !important;
     min-height: 100vh;
@@ -9,7 +12,7 @@
 }
 
 .workFont {
-    font-family: serif !important;
+    font-family: "Rufina", serif !important;
     font-size: 100px !important;
     color: white;
     font-weight: bold;
@@ -19,7 +22,7 @@
 }
 
 .IwantFont {
-    font-family: serif !important;
+    font-family: Roboto !important;
     font-size: 40px !important;
     color: white;
     font-weight: bold;
@@ -43,23 +46,11 @@
     font-weight: bold !important;
     font-size: 20px !important;
 }
-.formControlWork:disabled{
+
+.formControlWork:disabled {
     font-family: serif;
     font-weight: bold !important;
     font-size: 20px !important;
-}
-
-.ButtonWork {
-    background: white;
-    font-family: serif;
-    color: #383C34;
-    border-color: transparent;
-    border-radius: 20px;
-    border-width: 2px;
-    width: 100px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
 }
 
 .ButtonWork:hover {
@@ -74,8 +65,70 @@
     background: white !important;
 }
 
-.ButtonWork:disabled{
+.ButtonWork:disabled {
     color: #383C34 !important;
     border-color: transparent !important;
     background: white !important;
+}
+
+.cardContainerWork {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh;
+    width: 100%;
+    margin-left: 4%;
+}
+
+.filterButton{
+    background: transparent !important;
+    font-family: serif;
+    color: #383C34;
+    border-color: transparent;
+}
+
+.btn:hover {
+    background: white;
+    font-family: serif;
+    color: #383C34;
+    border-color: transparent;
+    border-radius: 20px;
+    border-width: 2px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-primary{
+    background: white;
+    font-family: serif;
+    color: #383C34;
+    border-color: transparent;
+    border-radius: 20px;
+    border-width: 2px;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn:focus{
+    color: #383C34 !important;
+    border-color: transparent !important;
+    background: white !important;
+}
+
+.Dropdown-control {
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: black !important;
+    cursor: default;
+    outline: none;
+    transition: all 200msease;
+    padding: none !important;
+    margin-right: 2% !important;
 }

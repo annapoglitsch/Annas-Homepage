@@ -22,12 +22,12 @@ function AboutMe() {
                 </div>
                 <div className="aboutMeDiv">
                     <h2 className="aboutMeTitle">In my free time I like to...</h2>
-                    <Container className="card-container" >
-                        <Row className="myWorkRow g-4">
+                    <Container className="cardContainer" >
+                        <Row className="myWorkRow g-4" style={{gap: "70px"}}>
                             {cards.hobbyCards.map((card, index) => {
                                 return (
                                     <Col key={index} xs={12} sm={6} md={4} lg={3} >
-                                        <Card style={{ width: "20rem", height: "22rem" }}>
+                                        <Card style={{ width: "20rem", height: "22rem"}}>
                                             <Card.Body style={{ height: "18rem" }} className="card-body-flex">
                                                 <Card.Title className="text-card">{card.header}</Card.Title>
                                                 <Card.Text >

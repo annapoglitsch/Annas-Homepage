@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
 .card-container {
     height: auto;
     overflow: hidden;
@@ -20,7 +23,7 @@
 }
 
 .text-card {
-    font-family: serif;
+    font-family: "Rufina", serif !important;
     font-weight: bold;
     font-size: 20px;
 }
@@ -29,4 +32,8 @@
     background-color: #D6C9B4;
     width: 100%;
     font-weight: bold;
+}
+
+.bodyCardText{
+    font-family: Roboto;
 }

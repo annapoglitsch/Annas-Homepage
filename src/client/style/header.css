@@ -22,7 +22,7 @@
     margin: 20px;
 }
 
-.buttonHeader{
+.buttonHeader {
     font-family: Roboto !important;
     font-size: 30px !important;
     font-weight: 500;
@@ -30,9 +30,11 @@
     color: black;
     border-color: black;
     border-width: 2px;
+    width: auto !important;
+    height: auto !important;
 }
 
-.buttonHeader:hover{
+.buttonHeader:hover {
     font-family: Roboto !important;
     font-size: 30px !important;
     font-weight: 500 !important;
@@ -42,7 +44,7 @@
     border-width: 2px;
 }
 
-.buttonHeader:focus-visible{
+.buttonHeader:focus-visible {
     font-family: Roboto !important;
     font-size: 30px !important;
     font-weight: 500 !important;
@@ -52,7 +54,7 @@
     border-width: 2px;
 }
 
-.buttonHeader:active{
+.buttonHeader:active {
     font-family: Roboto !important;
     font-size: 30px !important;
     font-weight: 500 !important;

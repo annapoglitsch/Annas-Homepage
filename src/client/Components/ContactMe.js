@@ -6,36 +6,33 @@ import Button from "react-bootstrap/Button";
 function ContactMe() {
   const [email, setEmail] = React.useState('');
   const [message, setMessage] = React.useState('');
-  
 
-  const handleSubmit = async () => {
+  const handleSumbit = async () => {
+
     const data = {
-      email: email, 
+      email: email,
       message: message,
-    };
-
-    console.log(data);
-
-    fetch("http://localhost:5002/contact", {
+    }
+    console.log(data)
+    fetch("http://localhost:5000/contact", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "Application/JSON"
       },
       body: JSON.stringify(data)
-    })
-      .then((response) => response.json())
-      .then(() => {
-        setEmail(""); 
+    }).then((response) => response.json())
+      .then((Reset) => {
+        setEmail("");
         setMessage("");
+      }).catch((error) => {
+        console.log(error)
       })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
-  const handleReset = () => {
-    setEmail(""); 
+  }
+  const handleREset = async () => {
+    setEmail("");
     setMessage("");
+
   };
 
   return (
@@ -47,7 +44,8 @@ function ContactMe() {
           placeholder="name@example.com"
           className="inputInputFont"
           value={email}
-          onChange={event => setEmail(event.target.value)} 
+          onChange={event => setEmail(event.target.value)}
+          onReset={() => setEmail({})}
         />
       </Form.Group>
 
@@ -61,13 +59,13 @@ function ContactMe() {
           onChange={event => setMessage(event.target.value)}
         />
       </Form.Group>
-
-      <Button className="SubmitResetOne" onClick={handleSubmit}>
+      <Button className="SubmitResetOne" onClick={handleSumbit}>
         Submit
       </Button>
-      <Button className="SubmitResetTwo" onClick={handleReset}>
+      <Button className="SubmitResetTwo" onClick={handleREset}>
         Reset
       </Button>
+
     </Form>
   );
 }
