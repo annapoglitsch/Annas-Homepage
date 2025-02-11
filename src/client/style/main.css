@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
-
-.wantToknow{
-    font-size: 60px !important;
+.pageTitle{
+    font-size: 100px;
+    font-family: Rufina, serif;
     color: white;
-    font-family: Roboto;
-    font-size: 50px;
-    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10%;
 }

@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   NavbarContent,
   NavbarItem,
 } from "@heroui/navbar";
-import {Link} from "@heroui/react";
+import {Button, Link} from "@heroui/react";
 import "../style/home.css"
+import "../style/header.css"
 
 function Header(){
+
+  const [language, setLanguage] = useState("English");
+
+  function handleLanguageChange(){
+    setLanguage(language === "Englisch" ? "Deutsch" : "Englisch");
+  }
+
     return(
         <div className="headerDiv">
         <Navbar >
@@ -26,7 +34,7 @@ function Header(){
             </NavbarItem>
           </NavbarContent>
         </Navbar>
-        <h2 style={{ fontSize: "25px", fontWeight: "600", fontFamily: "serif", paddingRight: "30px" }}>Anna Poglitsch</h2>
+        <Button className="headerButton" onClick={handleLanguageChange}>{language}</Button>
 
       </div>
     )

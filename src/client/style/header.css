@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
+
+.headerButton{
+    font-size: 25px;
+    font-weight: 400;
+    font-family: Roboto;
+    padding-right: 2%;
+    background-color: transparent !important;
+    text-align: center !important;
+    display: inline-block;
+}
+.headerDiv {
+    background-color: #D6C9B4 !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }

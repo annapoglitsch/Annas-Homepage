@@ -16,7 +16,7 @@ function ContactInput() {
 
         console.log(data);
 
-        fetch("http://localhost:5000/contact", {
+        fetch("http://localhost:5001/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -6,13 +6,15 @@ import CardJS from "../Components/Card"
 import FilterWork from '../Components/FilterWork';
 import { Button} from '@heroui/react';
 import "../style/mywork.css"
+import "../style/home.css"
+import "../style/main.css"
 
 function MyWork() {
     return (
-        <div style={{ backgroundColor: "#F7F6E3", minHeight: "100vh" }}>
+        <div className='mainDis'>
             <Header></Header>
             <div style={{ direction: "column", textAlign: "center", marginTop: "100px" }}>
-                <h1 style={{ fontSize: "100px", fontFamily: "serif", color: "#383C34", fontWeight: "bold", marginBottom: "120px" }}>Let's Talk About Work.</h1>
+                <h1 className='pageTitle'>Let's Talk About Work.</h1>
             </div>
                 <h2 className='wantToknow' >I want to know something about...</h2>
 

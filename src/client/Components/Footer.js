@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@heroui/react";
 import '../style/home.css';
-
+import "../style/footer.css"
 function Footer() {
   return (
     <div className="containerFooter"
