@@ -7,13 +7,14 @@ import {
 import {Button, Link} from "@heroui/react";
 import "../style/home.css"
 import "../style/header.css"
+import "../style/main.css"
 
 function Header(){
 
   const [language, setLanguage] = useState("English");
 
   function handleLanguageChange(){
-    setLanguage(language === "Englisch" ? "Deutsch" : "Englisch");
+    setLanguage(language === "English" ? "Deutsch" : "English");
   }
 
     return(
@@ -34,7 +35,10 @@ function Header(){
             </NavbarItem>
           </NavbarContent>
         </Navbar>
-        <Button className="headerButton" onClick={handleLanguageChange}>{language}</Button>
+        <div style={{marginRight:"2%", alignItems: "center"}}>
+          
+        <Button className="mainButton" onClick={handleLanguageChange}>{language}</Button>
+        </div>
 
       </div>
     )

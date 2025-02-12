@@ -1,0 +1,18 @@
+{
+    "aboutMeCards":[{
+        "header": "Meet friends",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    },
+    {
+        "header": "Read",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    },
+    {
+        "header": "Pilatesm",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "read more"
+    }
+    ]
+}

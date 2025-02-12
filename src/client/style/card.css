@@ -1,0 +1,10 @@
+.workCardDiv {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    gap: 5%;
+    max-width: 100vw;
+    max-height: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    justify-content: center;
+}

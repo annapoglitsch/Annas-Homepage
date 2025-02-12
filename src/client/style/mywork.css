@@ -2,10 +2,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
 
-.wantToknow{
+.wantToknow {
     font-size: 60px !important;
     color: white;
     font-family: Roboto;
     font-size: 50px;
     text-align: center;
+    font-weight: 300;
+}
+
+.dropdown-menu {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 160%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 3px 3px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-family: Roboto;
+    width: 1% !important;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.dropdown-item input[type="checkbox"] {
+    transform: scale(1.2);
 }

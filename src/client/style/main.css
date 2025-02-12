@@ -8,3 +8,19 @@
     font-weight: bold;
     margin-bottom: 10%;
 }
+
+.mainButton{
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    font-family: Roboto;
+    border-color: #D6C9B4 !important;
+    border-width: 3px !important;
+}
+
+.cardInfo{
+    flex-direction: row;
+    display: flex;
+    gap: 3%;
+    justify-content: center;
+}
