@@ -42,13 +42,7 @@ function Filter({onSearch, onFilterChange}) {
 
     return (
         <Form className="formWork d-flex align-items-center justify-content-center">
-            <div className="col-auto">
-                <Form.Group className="formGroupWork" controlId="exampleForm.ControlInput1" >
-                    <Form.Control type="text" placeholder="Search" className="formControlWork w-100" value={searchInput}  onChange={handleSearch} />
-                </Form.Group>
-            </div>
-
-            <DropdownButton style={{marginRight: "5%"}} title={<BsFilter size={40}/>}>
+             <DropdownButton style={{marginRight: "5%"}} title={<BsFilter size={40}/>}>
                 <Dropdown.Item as="div">
                     <Form.Check
                         type="checkbox"
@@ -66,6 +60,13 @@ function Filter({onSearch, onFilterChange}) {
                     />
                 </Dropdown.Item>
             </DropdownButton>
+            <div className="col-auto">
+                <Form.Group className="formGroupWork" controlId="exampleForm.ControlInput1" >
+                    <Form.Control type="text" placeholder="Search" className="formControlWork w-100" value={searchInput}  onChange={handleSearch} />
+                </Form.Group>
+            </div>
+
+           
 
             <div className="col-auto">
                 <Button className="ButtonWork" variant="primary" type="button" onClick={submitSearch}>Search</Button>
