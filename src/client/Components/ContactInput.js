@@ -45,11 +45,11 @@ function ContactInput() {
             flexDirection: "column",
             alignItems: "center",
         }}>
-            <Input placeholder="Email" type="" className="contactInput" description={null} value={email} style={{ fontSize: "30px", borderColor: "#D6C9B4", borderWidth: "3px", fontFamily: "Roboto" }} onChange={event => setEmail(event.target.value)}/>
-            <Input placeholder="Message" type="" description={null} value={message} style={{ fontSize: "30px", borderColor: "#D6C9B4", borderWidth: "3px", fontFamily: "Roboto" }} onChange={event => setMessage(event.target.value)} ></Input>
+            <Input aria-label="Please input your email adress" placeholder="Email" type="" className="contactInput" description={null} value={email} style={{ fontSize: "30px", borderColor: "#D6C9B4", borderWidth: "3px", fontFamily: "Roboto" }} onChange={event => setEmail(event.target.value)}/>
+            <Input aria-label="Please input your message." placeholder="Message" type="" description={null} value={message} style={{ fontSize: "30px", borderColor: "#D6C9B4", borderWidth: "3px", fontFamily: "Roboto" }} onChange={event => setMessage(event.target.value)} ></Input>
             <div style={{ flexDirection: "column", marginTop: "5%", width: "auto", display:"flex", flexDirection: "row" }}>
-                <Button className="mainButton"  onClick={handleSubmit} style={{marginRight: "10%"}}>Submit</Button>
-                <Button className="mainButton"  onClick={handleReset} >Reset</Button>
+                <Button aria-label="Submit Message" className="mainButton"  onClick={handleSubmit} style={{marginRight: "10%"}}>Submit</Button>
+                <Button aria-label="Reset Message" className="mainButton"  onClick={handleReset} >Reset</Button>
 
             </div>
         </div>

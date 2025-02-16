@@ -53,21 +53,21 @@ function FilterWork({onSearch, onFilterChange}) {
         <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginTop: "40px", alignItems: "center" }}>
             <Dropdown>
                 <DropdownTrigger>
-                    <Button className="mainButton" style={{}}>
+                    <Button aria-label="Filter Button" className="mainButton" style={{}}>
                         Filter
                     </Button>
                 </DropdownTrigger>
-                <DropdownMenu aria-label="Static Actions" className="dropdown-menu">
+                <DropdownMenu  className="dropdown-menu">
                     <DropdownItem className="dropdown-item">
-                        <Checkbox type="checkbox" name="Projects" style={{ color: "black" }} onChange={handleCheckBox}>Projects</Checkbox>
+                        <Checkbox aria-label="Checkbox Projects" type="checkbox" name="Projects" style={{ color: "black" }} onChange={handleCheckBox}>Projects</Checkbox>
                     </DropdownItem>
                     <DropdownItem className="dropdown-item">
-                        <Checkbox type="checkbox" name="Hobby" onChange={handleCheckBox}>Hobby</Checkbox>
+                        <Checkbox aria-label="Checkbox Hobby" type="checkbox" name="Hobby" onChange={handleCheckBox}>Hobby</Checkbox>
                     </DropdownItem>
                 </DropdownMenu>
             </Dropdown>
-            <Input type="text" placeholder="Input Search..." className="workInput" style={{ fontSize: "30px", borderColor: "#D6C9B4", borderWidth: "3px", fontFamily: "Roboto" }} value={searchInput} onChange={handleSearch} ></Input>
-            <Button className='mainButton' onClick={submitSearch}>Search</Button>
+            <Input aria-label="Please enter anything you want to search for." type="text" placeholder="Input Search..." className="workInput" style={{ fontSize: "30px", borderColor: "#D6C9B4", borderWidth: "3px", fontFamily: "Roboto" }} value={searchInput} onChange={handleSearch} ></Input>
+            <Button aria-label="Submit Search" className='mainButton' onClick={submitSearch}>Search</Button>
         </div>
 
     );

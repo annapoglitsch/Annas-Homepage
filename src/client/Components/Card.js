@@ -42,24 +42,24 @@ function CardJS({ searchValue, filterValue }) {
                 {filteredCards.length > 0 ? (
                     filteredCards.map((card, index) => (
                         <Card key={index} style={{ background: "white", width: "100%", height: "auto", fontSize: "20px" }}>
-                            <CardHeader color="#E2E1CF" style={{ fontWeight: "bold", paddingLeft: "10px" }}>
+                            <CardHeader aria-label={card.header}  color="#E2E1CF" style={{ fontWeight: "bold", paddingLeft: "10px" }}>
                                 <div className="flex flex-col">
                                     <p className="text-md">{card.header}</p>
                                 </div>
                             </CardHeader>
                             <Divider />
-                            <CardBody style={{ height: "200px", paddingLeft: "10px" }}>
+                            <CardBody aria-label={card.body}  style={{ height: "200px", paddingLeft: "10px" }}>
                                 <p>{card.body}</p>
                             </CardBody>
                             <CardFooter style={{ background: "#E2E1CF" }}>
-                                <Link href="https://github.com/frontio-ai/heroui" className="custom-link">
+                                <Link aria-label={card.footer}  href="https://github.com/frontio-ai/heroui" className="custom-link">
                                     {card.footer}
                                 </Link>
                             </CardFooter>
                         </Card>
                     ))
                 ) : (
-                    <p style={{ textAlign: "center", width: "100%", color: "white", fontSize: "30px" }}>Keine Karten gefunden.</p>
+                    <p aria-label="No cards found." style={{ textAlign: "center", width: "100%", color: "white", fontSize: "30px" }}>No cards found.</p>
                 )}
 
             </div>

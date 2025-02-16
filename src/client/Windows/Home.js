@@ -4,6 +4,11 @@ import Header from "../Components/Header"
 import Footer from "../Components/Footer"
 
 function Home() {
+
+  var homePara = `Die Website weist einige barrierefreie Elemente auf, wie APCA entsprechende Farbkontraste und Schriftgrößen. 
+    Zusätzlich ist die gesamte Seite Screenreader-friendly. Natürlich ist diese Seite weit entfernt von perfekt aber
+    es wird laufen an der Verbesserung an barrierefreien Elementen gearbeitet.`;
+
   return (
     <div className='mainDis'>
       {/* Header Section */}
@@ -11,12 +16,12 @@ function Home() {
 
       {/* Welcome Section */}
       <div className='content' >
-        <h1 className='welcomeFont'>
+        <h1 aria-label='Welcome wishes Anna Poglitsch.' className='welcomeFont'>
           Welcome.
         </h1>
       </div>
       <div className='annaPoglitschDiv'>
-        <h2 className='annaPoglitsch'>Anna Poglitsch.</h2>
+        <h2 aria-label='' className='annaPoglitsch'>Anna Poglitsch.</h2>
       </div>
       <div className='mainAccessDiv'> 
         <div className='iconContainer'>
@@ -26,10 +31,10 @@ function Home() {
         </div>
         <div className='mainTextContainer'>
           <div className='titleTextContainer'>
-            <h2 className='titleText'>Warum ist diese Website Barrierefrei?</h2>
+            <h2 aria-label='Why is this website accessable?' className='titleText'>Why is this website accessable?</h2>
           </div>
           <div className='paragraphTextDiv'>
-            <p className='textParagraph'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula accumsan turpis, sit amet vehicula sapien lacinia non. Duis pharetra quam at lorem malesuada, id cursus ipsum tincidunt.</p>
+            <p aria-label={homePara} className='textParagraph'>{homePara}</p>
           </div>
         </div>
       </div>

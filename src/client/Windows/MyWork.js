@@ -21,9 +21,9 @@ function MyWork() {
         <div className='mainDis'>
             <Header></Header>
             <div style={{ direction: "column", textAlign: "center", marginTop: "100px" }}>
-                <h1 className='pageTitle'>Let's Talk About Work.</h1>
+                <h1 aria-label="Let's Talk About Work." className='pageTitle'>Let's Talk About Work.</h1>
             </div>
-            <h2 className='wantToknow' >I want to know something about...</h2>
+            <h2 aria-label="I want to know something about..." className='wantToknow' >I want to know something about...</h2>
 
             <FilterWork onSearch={setSearchValue} onFilterChange={setFilterValue} />
 

@@ -12,6 +12,10 @@ import { Divider } from "@heroui/divider";
 
 
 function AboutMe() {
+
+    var aboutMeText= `Im Zuge meiner Schullaufbahn habe ich meine Neugier für Technik, Datenverarbeitung und dessen Schutz entdeckt. Meine ersten Berührungspunkte habe ich in der Unterstufe in der Übung Informatik gemacht, was dazu geführt hat, dass ich mich anschließend für den Realzweig und für meine derzeitige Ausbildung entschieden habe. Das Studium Computer Science and Digital Communication vereint alle Themenbereiche, die ich näher kennenlernen will und in weiterer Folge beherrschen. Seit her begleitet mich Mathematik, Programmieren und verschiedenste Team-Projekte täglich durch mein Leben. Ich habe gelernt mich an neue Funktionsabläufe anzupassen, konsequent an meinem Ziel zu bleiben und wenn nötig, nach Hilfe zu fragen. Neben meinem Studium, arbeite ich geringfügig bei der ITSV, wo ich Gelerntes in die Realität umsetzen darf.`;
+
+
     return (
         <div className='mainDis'>
             <Header></Header>
@@ -30,31 +34,25 @@ function AboutMe() {
                         src="https://heroui.com/images/hero-card-complete.jpeg"
 
                     />
-                    <p className='aboutMeParagraph' >
-                        Im Zuge meiner Schullaufbahn habe ich meine Neugier für Technik, Datenverarbeitung und dessen Schutz entdeckt.
-                        Meine ersten Berührungspunkte habe ich in der Unterstufe in der Übung Informatik gemacht, was dazu geführt hat,
-                        dass ich mich anschließend für den Realzweig und für meine derzeitige Ausbildung entschieden habe. Das Studium Computer
-                        Science and Digital Communication vereint alle Themenbereiche, die ich näher kennenlernen will und in weiterer Folge beherrschen.
-                        Seit her begleitet mich Mathematik, Programmieren und verschiedenste Team-Projekte täglich durch mein Leben. Ich habe gelernt mich
-                        an neue Funktionsabläufe anzupassen, konsequent an meinem Ziel zu bleiben und wenn nötig, nach Hilfe zu fragen. Neben meinem Studium,
-                        arbeite ich geringfügig bei der ITSV, wo ich Gelerntes in die Realität umsetzen darf.</p>
+                    <p aria-label={aboutMeText} className='aboutMeParagraph' >
+                       {aboutMeText}</p>
                 </div>
                 <div className='hobbyDiv'>
-                    <h2 className='aboutMeFreeTime'>In my free time I like to...</h2>
+                    <h2 aria-label='In my free time I like to...' className='aboutMeFreeTime'>In my free time I like to...</h2>
                     <div className='cardInfo' style={{marginTop: "5%"}}>
                         {aboutMeCards.aboutMeCards.map(card => {
                             return (
                                 <Card style={{ background: "white", width: "350px", height: "auto", fontSize: "20px" }}>
-                                    <CardHeader color="#E2E1CF" style={{ fontWeight: "bold", paddingLeft: "10px" }}>
+                                    <CardHeader aria-label={card.header} color="#E2E1CF" style={{ fontWeight: "bold", paddingLeft: "10px" }}>
                                         <div className="flex flex-col">
                                             <p className="text-md">{card.header}</p>
                                         </div>
                                     </CardHeader>
                                     <Divider></Divider>
-                                    <CardBody style={{ height: "200px", paddingLeft: "10px" }}>
+                                    <CardBody aria-label={card.body} style={{ height: "200px", paddingLeft: "10px" }}>
                                         <p>{card.body}</p>
                                     </CardBody>
-                                    <CardFooter style={{ background: "#E2E1CF" }}>
+                                    <CardFooter aria-label={card.footer} style={{ background: "#E2E1CF" }}>
                                         <Link href="https://github.com/frontio-ai/heroui" className="custom-link" >
                                             {card.footer}
                                         </Link>

@@ -6,10 +6,10 @@ function Footer() {
   return (
     <div className="containerFooter"
     >
-      <h2 className="copyright">
+      <h2 aria-label="Copyright 2025" className="copyright">
         Copyright © 2025
       </h2>
-      <Link href="/contact" className="custom-link">Contact</Link>
+      <Link aria-label="Link to Contact Me." href="/contact" className="custom-link">Contact</Link>
     </div>
   );
 }

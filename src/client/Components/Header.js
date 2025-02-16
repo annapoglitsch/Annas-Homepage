@@ -22,22 +22,22 @@ function Header(){
         <Navbar >
           <NavbarContent style={{ display: 'flex', justifyContent: "flex-start", listStyle: "none" }}>
             <NavbarItem style={{ fontSize: "30px", fontFamily: "serif" }}>
-              <Link href="/" className="custom-link">Home</Link>
+              <Link aria-label="Home" href="/" className="custom-link">Home</Link>
             </NavbarItem>
             <NavbarItem style={{ fontSize: "30px", fontFamily: "serif" }}>
-              <Link href="/aboutme" className="custom-link">About Me</Link>
+              <Link aria-label="About Me" href="/aboutme" className="custom-link">About Me</Link>
             </NavbarItem>
             <NavbarItem style={{ fontSize: "30px", fontFamily: "serif" }}>
-              <Link href="/mywork" className="custom-link">My Work</Link>
+              <Link aria-label="My Work" href="/mywork" className="custom-link">My Work</Link>
             </NavbarItem>
             <NavbarItem style={{ fontSize: "30px", fontFamily: "serif" }}>
-              <Link href="/contact" className="custom-link">Contact Me</Link>
+              <Link aria-label="Contact Me" href="/contact" className="custom-link">Contact Me</Link>
             </NavbarItem>
           </NavbarContent>
         </Navbar>
         <div style={{marginRight:"2%", alignItems: "center"}}>
           
-        <Button className="mainButton" onClick={handleLanguageChange}>{language}</Button>
+        <Button aria-label="Choose your language. Current language: Englisch" className="mainButton" onClick={handleLanguageChange}>{language}</Button>
         </div>
 
       </div>
