@@ -44,15 +44,15 @@ function CardWork({searchValue, filterValue}){
                         <Col key={index} xs={12} sm={6} md={4} lg={3}>
                             <Card style={{ width: "20rem", height: "22rem" }}>
                                 <Card.Body style={{ height: "18rem" }} className="card-body-flex">
-                                    <Card.Title className="text-card">{card.header}</Card.Title>
-                                    <Card.Text className="bodyCardText">{card.body}</Card.Text>
-                                    <Card.Footer className="cardFooter">{card.footer}</Card.Footer>
+                                    <Card.Title aria-label={card.header} className="text-card">{card.header}</Card.Title>
+                                    <Card.Text aria-label={card.body}  className="bodyCardText">{card.body}</Card.Text>
+                                    <Card.Footer aria-label={card.footer}  className="cardFooter">{card.footer}</Card.Footer>
                                 </Card.Body>
                             </Card>
                         </Col>
                     ))
                 ) : (
-                    <p style={{ textAlign: "center", width: "100%", color: "white", fontSize: "30px" }}>Keine Karten gefunden.</p> 
+                    <p aria-label="No entries were fround." style={{ textAlign: "center", width: "100%", color: "white", fontSize: "30px" }}>No entries were found.</p> 
                 )}
             </Row>
 

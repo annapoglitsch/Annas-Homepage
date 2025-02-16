@@ -28,7 +28,7 @@ function Header() {
               <Nav.Link aria-label="Link to Contact Me"  href="/contact">Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <Button className="buttonHeader" onClick={changeButtonText} >{language}</Button>
+          <Button aria-label="Choose your language. Current language: English" className="buttonHeader" onClick={changeButtonText} >{language}</Button>
         </Container>
       </Navbar>
     )
