@@ -48,20 +48,20 @@ export default function CardTemplate({ searchValue, filterValue }) {
           filteredCards.map((card) => (
           <Box>
             <Card key={card.id} height="medium" width="medium" background="light-1" className="cardStyle" >
-              <CardHeader aria-label={card.header} pad="medium" className="fontCardStyle">
+              <CardHeader a11yTitle={card.header} pad="medium" className="fontCardStyle">
                 {card.header}
               </CardHeader>
-              <CardBody aria-label={card.body} pad="medium" className="bodyCardStyle">
+              <CardBody a11yTitle={card.body} pad="medium" className="bodyCardStyle">
                 {card.body}
               </CardBody>
-              <CardFooter aria-label={card.footer} pad={{ horizontal: "small" }} height="xxsmall" background="#D6C9B4" className="fontCardStyle">
+              <CardFooter a11yTitle={card.footer} pad={{ horizontal: "small" }} height="xxsmall" background="#D6C9B4" className="fontCardStyle">
                 {card.footer}
               </CardFooter>
             </Card>
             </Box>
           ))
         ) : (
-          <p>No results found.</p>
+          <p a11yTitle="No results found.">  No results found.</p>
         )}
 
       
