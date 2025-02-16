@@ -51,9 +51,7 @@ function Home() {
               a11yTitle={homePara}
                 className="homeParagraph"
               >
-                Die Website weist einige barrierefreie Elemente auf, wie APCA entsprechende Farbkontraste und Schriftgrößen. 
-                Zusätzlich ist die gesamte Seite Screenreader-friendly. Natürlich ist diese Seite weit entfernt von perfekt aber
-                es wird laufen an der Verbesserung an barrierefreien Elementen gearbeitet.
+                {homePara}
               </Paragraph>
             </Box>
           </Box>
