@@ -18,8 +18,8 @@ function MyWork() {
             <Header></Header>
             <div className="main-contentDiv">
 
-                <h1 className="workFont">Let's Talk About Work.</h1>
-                <h1 className="IwantFont"> I want to know something about...</h1>
+                <h1 aria-label="Let's Talk About Work." className="workFont" >Let's Talk About Work.</h1>
+                <h1 aria-label="I want to know something about..." className="IwantFont"> I want to know something about...</h1>
                <Filter onSearch={setSearchValue} onFilterChange={setFilterValue}></Filter>
                 <div className="cardContainerWork">
                     <CardWork searchValue={searchValue} filterValue={filterValue}></CardWork>

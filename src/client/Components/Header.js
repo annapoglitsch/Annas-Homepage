@@ -22,10 +22,10 @@ function Header() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link className="link" href="/">Home</Nav.Link>
-              <Nav.Link className="link" href="/aboutme">About Me</Nav.Link>
-              <Nav.Link className="link" href="/mywork">My Work</Nav.Link>
-              <Nav.Link className="link" href="/contact">Contact</Nav.Link>
+            <Nav.Link aria-label=" Link to Home"  href="/">Home</Nav.Link>
+              <Nav.Link aria-label="Link to About Me"  href="/aboutme">About Me</Nav.Link>
+              <Nav.Link aria-label="Link to My Work"  href="/mywork">My Work</Nav.Link>
+              <Nav.Link aria-label="Link to Contact Me"  href="/contact">Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Button className="buttonHeader" onClick={changeButtonText} >{language}</Button>

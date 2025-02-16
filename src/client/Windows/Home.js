@@ -7,13 +7,18 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
 function Home() {
+
+    var homePara = `Die Website weist einige barrierefreie Elemente auf, wie APCA entsprechende Farbkontraste und Schriftgrößen. 
+    Zusätzlich ist die gesamte Seite Screenreader-friendly. Natürlich ist diese Seite weit entfernt von perfekt aber
+    es wird laufen an der Verbesserung an barrierefreien Elementen gearbeitet.`;
+
     return (
         <div>
             <Header></Header>
             <div className="main-content">
-                <h1 className="welcomeFont">Welcome.</h1>
+                <h1 aria-label="Welcome wishes Anna Poglitsch" className="welcomeFont">Welcome.</h1>
                 <div className="annapoglitschdiv">
-                    <h2 className="annapoglitsch">Anna Poglitsch</h2>
+                    <h2 aria-label="" className="annapoglitsch">Anna Poglitsch</h2>
                 </div>
                 <Row className="mainContainer">
                     <Container className="iconContainer">
@@ -24,15 +29,13 @@ function Home() {
 
                     <Col className="mainTextContainer">
                         <Container className="headlineTextContainer">
-                            <p className="headlineText">
+                            <p aria-label="Warum ist diese Website Barrierefrei?" className="headlineText">
                                 Warum ist diese Website Barrierefrei?
                             </p>
                         </Container>
                         <Container className="explainTextContainer">
-                            <p className="explainText">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula
-                                accumsan turpis, sit amet vehicula sapien lacinia non. Duis pharetra quam at
-                                lorem malesuada, id cursus ipsum tincidunt.
+                            <p aria-label={homePara} className="explainText">
+                            {homePara}
                             </p>
                         </Container>
                     </Col>

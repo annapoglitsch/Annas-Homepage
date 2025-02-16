@@ -38,8 +38,9 @@ function ContactMe() {
   return (
     <Form style={{ width: "400px", justifyContent: "center" }}>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label className="inputFont">Email address</Form.Label>
+        <Form.Label aria-label="Please enter your email address in the input field." className="inputFont">Email address</Form.Label>
         <Form.Control
+        aria-label="Input field"
           type="email"
           placeholder="name@example.com"
           className="inputInputFont"
@@ -50,8 +51,9 @@ function ContactMe() {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label className="inputFont">Message</Form.Label>
+        <Form.Label aria-label="Lease a message in the message field" className="inputFont">Message</Form.Label>
         <Form.Control
+        aria-label="Message Field"
           as="textarea"
           rows={3}
           className="inputInputFont"
@@ -59,10 +61,10 @@ function ContactMe() {
           onChange={event => setMessage(event.target.value)}
         />
       </Form.Group>
-      <Button className="SubmitResetOne" onClick={handleSumbit}>
+      <Button aria-label="Submit Message" className="SubmitResetOne" onClick={handleSumbit}>
         Submit
       </Button>
-      <Button className="SubmitResetTwo" onClick={handleREset}>
+      <Button aria-label="Reset email and message field." className="SubmitResetTwo" onClick={handleREset}>
         Reset
       </Button>
 

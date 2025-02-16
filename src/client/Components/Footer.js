@@ -7,8 +7,8 @@ import NavLink from "react-bootstrap/esm/NavLink";
 function Footer() {
     return (
         <Container className="containerFooter" fluid>
-            <h1 className="copyright">Copyright © 2025</h1>
-          <NavLink className="linkFooter" href="/contact">Contact Me</NavLink>
+            <h1 aria-label="Copyright 2025" className="copyright">Copyright © 2025</h1>
+          <NavLink aria-label="Link to Contact Me" className="linkFooter" href="/contact">Contact Me</NavLink>
         </Container>
     )
 }

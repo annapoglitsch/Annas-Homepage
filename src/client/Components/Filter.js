@@ -45,6 +45,7 @@ function Filter({onSearch, onFilterChange}) {
              <DropdownButton style={{marginRight: "5%"}} title={<BsFilter size={40}/>}>
                 <Dropdown.Item as="div">
                     <Form.Check
+                    aria-label="Projects"
                         type="checkbox"
                         label="Projects"
                         name="Projects"
@@ -53,6 +54,7 @@ function Filter({onSearch, onFilterChange}) {
                 </Dropdown.Item>
                 <Dropdown.Item as="div">
                     <Form.Check
+                    aria-label="Hobby"
                         type="checkbox"
                         label="Hobby"
                         name="Hobby"
@@ -62,14 +64,14 @@ function Filter({onSearch, onFilterChange}) {
             </DropdownButton>
             <div className="col-auto">
                 <Form.Group className="formGroupWork" controlId="exampleForm.ControlInput1" >
-                    <Form.Control type="text" placeholder="Search" className="formControlWork w-100" value={searchInput}  onChange={handleSearch} />
+                    <Form.Control aria-label="Enter something you want to search for." type="text" placeholder="Search" className="formControlWork w-100" value={searchInput}  onChange={handleSearch} />
                 </Form.Group>
             </div>
 
            
 
             <div className="col-auto">
-                <Button className="ButtonWork" variant="primary" type="button" onClick={submitSearch}>Search</Button>
+                <Button aria-label="Submit Search" className="ButtonWork" variant="primary" type="button" onClick={submitSearch}>Search</Button>
             </div>
         </Form>
     )
