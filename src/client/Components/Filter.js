@@ -16,7 +16,7 @@ function FilterTemp({ onSearch, onFilterChange }) {
     }
 
     useEffect(() => {
-        console.log("Search: ",searchInput)
+        console.log("Search: ", searchInput)
         console.log("Filter: ", filterValue)
     }, [searchInput, filterValue])
 
@@ -25,23 +25,24 @@ function FilterTemp({ onSearch, onFilterChange }) {
     return (
         <Box>
             <Toolbar>
-                <TextInput icon={<Search color="white" />} className="inputFilter" value={searchInput} onChange={(event) => {
-                    setSearchInput(event.target.value)
-                    console.log(event.target.value)
-                }} />
-                <DropButton style={{ marginTop: "-10px" }} icon={<Filter color="white" size="large"></Filter>} dropAlign={{ top: "bottom" }} dropContent={
+                <DropButton a11yTitle="Filter" style={{ marginTop: "-10px" }} icon={<Filter color="white" size="large"></Filter>} dropAlign={{ top: "bottom" }} dropContent={
                     <Box pad="medium" >
-                        <CheckBoxGroup value={filterValue}
+                        <CheckBoxGroup a11yTitle="Choose Project or/and Hobby" value={filterValue}
                             onChange={(event) => {
                                 console.log('value: ', event.value);
                                 console.log('option: ', event.option);
                                 setFilterValue(event.value);
                                 onFilterChange(event.value);
-                            }} 
+                            }}
                             options={["Projects", "Hobby"]} />
                     </Box>
                 } />
-                <Button label="Search" primary className="mainButton" size="large" onClick={handleSearch} />
+                <TextInput a11yTitle="" icon={<Search color="white" />} className="inputFilter" value={searchInput} onChange={(event) => {
+                    setSearchInput(event.target.value)
+                    console.log(event.target.value)
+                }} />
+
+                <Button a11yTitle="Search" label="Search" primary className="mainButton" size="large" onClick={handleSearch} />
             </Toolbar>
         </Box>
     )

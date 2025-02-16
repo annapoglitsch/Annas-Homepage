@@ -35,9 +35,9 @@ export function ContactWindowLocation() {
         <Box direction="row" pad={"medium"} gap={"xlarge"} alignSelf="center" style={{paddingBottom: "6%"}}>
           {contactMeCard.contactMeCard.map(card => {
             return (<Card height="medium" width="medium" background="light-1" className="cardStyle">
-              <CardHeader pad="medium" className="fontCardStyle">{card.header} </CardHeader>
-              <CardBody pad="medium" className="bodyCardStyle">{card.body}</CardBody>
-              <CardFooter pad={{ horizontal: "small" }}  height={"xxsmall"} background="#D6C9B4"  className="fontCardStyle">
+              <CardHeader a11yTitle={card.header} pad="medium" className="fontCardStyle">{card.header} </CardHeader>
+              <CardBody a11yTitle={card.body} pad="medium" className="bodyCardStyle">{card.body}</CardBody>
+              <CardFooter a11yTitle={card.footer} pad={{ horizontal: "small" }}  height={"xxsmall"} background="#D6C9B4"  className="fontCardStyle">
                 {card.footer}
               </CardFooter>
             </Card>)

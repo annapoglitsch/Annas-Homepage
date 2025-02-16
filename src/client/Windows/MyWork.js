@@ -31,7 +31,7 @@ function MyWork() {
           <Heading size="xlarge" className="myWorkTitle">Let's Talk About Work.</Heading>
         } alignSelf="center" />
         <Box style={{direction: "column", }}gap={"medium"} alignSelf="center">
-        <h1 className="searchWork">I want to know something about...</h1>
+        <h1 className="searchWork" a11yTitle="I want to know something about...">I want to know something about...</h1>
 
         <FilterTemp onSearch={setSearchValue} onFilterChange={setFilterValue}></FilterTemp>
         </Box>

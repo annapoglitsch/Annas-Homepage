@@ -44,7 +44,7 @@ function SendMessage() {
                 onReset={() => setEmail({})}
             >
                 <FormField className="inputLabel" htmlFor="text-input-id" label="E-Mail" >
-                    <TextInput value={email} id="text-input-id" name="emailField" className='inputEmail' />
+                    <TextInput value={email} id="text-input-id" name="emailField" className='inputEmail' a11yTitle='Please input your Email.' />
                 </FormField>
             </Form>
             <TextArea
@@ -52,12 +52,13 @@ function SendMessage() {
                 id="textArea"
                 size='xlarge'
                 className='inputText'
+                a11yTitle='Please input your message.'
                 value={message}
                 onChange={event => setMessage(event.target.value)}
             />
             <Box direction="row" gap="medium" style={{ paddingTop: "20px" }}>
-                <Button type="submit" primary label="Submit" className="mainButton" size='large' onClick={handleSumbit} />
-                <Button type="reset" label="Reset" className='mainButton' size='large' onClick={handleREset} />
+                <Button a11yTitle='Submit.' type="submit" primary label="Submit" className="mainButton" size='large' onClick={handleSumbit} />
+                <Button a11yTitle='Reset your message and email.' type="reset" label="Reset" className='mainButton' size='large' onClick={handleREset} />
             </Box>
         </Box>
     );

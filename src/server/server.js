@@ -4,13 +4,13 @@ import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 import { checkIfEmailisValid } from './logic/logicFun.js';
-
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
+  credentials: true }));
 
 app.use(express.json());
 
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.post('/contact', (req, res) => {
+app.post('/contact', async (req, res) => {
   const { email, message } = req.body;
 
   if (!email || !message) {
@@ -33,29 +33,28 @@ app.post('/contact', (req, res) => {
   const data = { email, message };
   const filePath = path.resolve(__dirname, './static/messages.json');
 
-  fs.readFile(filePath, 'utf8', (err, fileData) => {
-    if (err) {
-      return res.status(500).json({ message: 'Failed to read data file' });
-    }
+  try {
     let messages = [];
-    if (fileData) {
-      try {
-        messages = JSON.parse(fileData);
-      } catch (parseError) {
-        return res.status(500).json({ message: 'Failed to parse data file' });
-      }
+
+    try {
+      const fileData = await fs.readFile(filePath, 'utf8');
+      messages = JSON.parse(fileData);
+    } catch (parseError) {
+      return res.status(500).json({ message: 'Failed to parse data file' });
     }
 
     messages.push(data);
-    fs.writeFile(filePath, JSON.stringify(messages, null, 2), 'utf8', (writeError) => {
-      if (writeError) {
-        return res.status(500).json({ message: 'Failed to save data' });
-      }
 
-      res.status(200).json({ message: 'Data saved successfully' });
-    });
-  });
+    await fs.writeFile(filePath, JSON.stringify(messages, null, 2), 'utf8');
+
+    res.status(200).json({ message: 'Data saved successfully' });
+
+  } catch (error) {
+    console.error("Error writing to file:", error);
+    res.status(500).json({ message: 'Failed to save data' });
+  }
 });
+
 
 app.post('/mywork', async (req, res) => {
   let { searchInput, filterValue } = req.body;
@@ -70,8 +69,6 @@ app.post('/mywork', async (req, res) => {
     const fileData = await fs.readFile(filePath, "utf8");
     const data = JSON.parse(fileData)
 
-    console.log("FilterValueLength", filterValue.length);
-
     if (searchInput == "" && filterValue.length == 0) {
       return res.status(200).json(data.cards)
     }
@@ -81,7 +78,6 @@ app.post('/mywork', async (req, res) => {
    }
 
    console.log("Searchinpuuut: ", searchInput);
-   console.log("Filter[0]: ", filterValue[0]);
 
     const filteredCards = data.cards.filter(card =>
       card.header.toLowerCase().includes(searchInput.toLowerCase()) ||

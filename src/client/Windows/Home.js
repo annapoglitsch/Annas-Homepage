@@ -16,17 +16,22 @@ import "../style/main.css"
 import {Accessibility} from 'grommet-icons'
 
 function Home() {
+
+  var homePara = `Die Website weist einige barrierefreie Elemente auf, wie APCA entsprechende Farbkontraste und Schriftgrößen. 
+                Zusätzlich ist die gesamte Seite Screenreader-friendly. Natürlich ist diese Seite weit entfernt von perfekt aber
+                es wird laufen an der Verbesserung an barrierefreien Elementen gearbeitet.`;
+
   return (
     <Grommet>
       <Page className="mainPage">
         <HeaderTemp></HeaderTemp>
 
         <PageHeader a11yTitle="Welcome" title={
-          <Heading className="welcomeHome">Welcome.</Heading>
+          <Heading a11yTitle="Welcome wishes Anna Poglitsch" className="welcomeHome">Welcome.</Heading>
         } margin={{ top: '13%' }} alignSelf="center" />
 
         <Box alignSelf="center" margin={{ left: '20%', top: '-4%' }}>
-          <Text className="schnörkelSchrift">Anna Poglitsch.</Text>
+          <Text className="schnörkelSchrift" a11yTitle="">Anna Poglitsch.</Text>
         </Box>
 
         <Box direction="row" gap={"large"} pad={"medium"} margin={{ top: "25%" , }}>
@@ -36,18 +41,19 @@ function Home() {
 
           <Box direction="column" width="40%" justify="center" gap="small" margin={{}}>
             <Box pad={"large"} gap={"small"} border={{ color: "white", size: "medium", style: "solid" }} align="center">
-              <Text className="headline">Warum ist diese</Text>
-              <Text className="headline"> Website</Text>
-              <Text className="headline"> Barrierefrei?</Text>
+              <Text a11yTitle="Warum ist diese Website Barrierefrei?" className="headline">Warum ist diese</Text>
+              <Text a11yTitle="" className="headline"> Website</Text>
+              <Text a11yTitle="" className="headline"> Barrierefrei?</Text>
             </Box>
 
             <Box width={{ max: '600px' }} margin="auto" pad="small">
               <Paragraph
+              a11yTitle={homePara}
                 className="homeParagraph"
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula
-                accumsan turpis, sit amet vehicula sapien lacinia non. Duis pharetra quam at
-                lorem malesuada, id cursus ipsum tincidunt.
+                Die Website weist einige barrierefreie Elemente auf, wie APCA entsprechende Farbkontraste und Schriftgrößen. 
+                Zusätzlich ist die gesamte Seite Screenreader-friendly. Natürlich ist diese Seite weit entfernt von perfekt aber
+                es wird laufen an der Verbesserung an barrierefreien Elementen gearbeitet.
               </Paragraph>
             </Box>
           </Box>

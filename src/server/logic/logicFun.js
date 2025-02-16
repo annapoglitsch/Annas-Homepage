@@ -1,3 +1,9 @@
 export function checkIfEmailisValid(email) {
-    return "^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$".test(email)
+    if(email.includes("@")){
+        console.log("Es hat ein @", email)
+        return true;
+    }else{
+        console.log("Es hat kein @", email)
+        return false;
+    }
 }

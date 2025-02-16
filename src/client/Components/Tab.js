@@ -13,10 +13,10 @@ export default function TabComponent  ({ title1, title2, title3, title4 })  {
           navigate("/home");
           break;
         case 1:
-          navigate("/mywork");
+          navigate("/aboutme");
           break;
         case 2:
-          navigate("/aboutme");
+          navigate("/mywork");
           break;
         case 3:
           navigate("/contact");
@@ -29,9 +29,9 @@ export default function TabComponent  ({ title1, title2, title3, title4 })  {
         <Tabs onActive={handleTabChange} className="TabsHeader" >
         <Tab title={title1} TabComponent="Home"   a11yTitle="Home" className="headerTabs">
         </Tab>  
-        <Tab title={title3} TabComponent="AboutMe" a11yTitle="About Me" className="headerTabs">
+        <Tab title={title2} TabComponent="AboutMe" a11yTitle="About Me" className="headerTabs">
         </Tab>
-        <Tab title={title2} TabComponent="MyWork" color="black" a11yTitle="My Work"  className="headerTabs">
+        <Tab title={title3} TabComponent="MyWork" color="black" a11yTitle="My Work"  className="headerTabs">
         </Tab>
         <Tab title={title4}  TabComponent="ContactMe" a11yTitle="Contact Me"  className="headerTabs" >
         </Tab>
