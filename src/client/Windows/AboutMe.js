@@ -34,13 +34,7 @@ function AboutMe() {
 
   const languageChoise = selectedLanguage === "EN" ? English.english : German.german;
 
-  useEffect(() => {
-    console.log("AboutSelectedLanguage", selectedLanguage)
-    console.log("LanguageChoiseAbout:", languageChoise)
-  },
-    [selectedLanguage, languageChoise]
-
-  )
+ 
 
   return (
     <Grommet >

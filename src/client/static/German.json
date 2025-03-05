@@ -17,7 +17,11 @@
             "UntertitelWork": "Ich will etwas wissen über...",
             "FilterProjekt": "Projekte",
             "FilterHobby": "Hobbys",
-            "FilterSuche": "Suche"
+            "FilterSuche": "Suche",
+            "ContactMeTitel": "Kontaktiere mich.",
+            "SendMessageButton1": "Abschicken",
+            "SendMessageButton2": "Zurücksetzen/Löschen"
+
 
 
         }

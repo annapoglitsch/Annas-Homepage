@@ -15,14 +15,13 @@ import German from "../static/German.json"
 function FooterTemp({language}) {
 
 
-
   const languageChoise = language === "EN" ? English.english : German.german;
 
+
   useEffect(() => {
-    console.log("FooterSelectedLanguage", language)
-    console.log("LanguageChoiseFooter:", languageChoise)
+    console.log("LanguageChoiseFooter:", language)
   },
-    [language, languageChoise]
+    [ language]
 
   )
 
