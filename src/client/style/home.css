@@ -7,6 +7,8 @@
     color: white;
     font-family: "Rufina", serif;
     text-shadow: 6px 3px 4px #D6C9B4 !important;
+    max-width:none;
+    align-self: center;
 }
 
 .schnörkelSchrift {
@@ -32,7 +34,7 @@
     size: large;
     color: white;
     font-size: 30px !important;
-    line-height: 2;
+    line-height: 1.5 !important;
     text-align: justify;
     letter-spacing: 1px;
     font-family: Roboto;

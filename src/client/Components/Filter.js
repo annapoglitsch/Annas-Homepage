@@ -4,6 +4,8 @@ import { Search } from "grommet-icons";
 import { Filter } from "grommet-icons";
 import "../style/main.css"
 import "../style/mywork.css"
+import English from "../static/English.json"
+import German from "../static/German.json"
 
 function FilterTemp({ onSearch, onFilterChange }) {
 
@@ -20,31 +22,39 @@ function FilterTemp({ onSearch, onFilterChange }) {
         console.log("Filter: ", filterValue)
     }, [searchInput, filterValue])
 
+    const [selectedLanguage, setSelectedLanguage] = React.useState("");
 
+
+    const languageChoise = selectedLanguage === "EN" ? English.english : German.german;
 
     return (
         <Box>
-            <Toolbar>
-                <DropButton a11yTitle="Filter" style={{ marginTop: "-10px" }} icon={<Filter color="white" size="large"></Filter>} dropAlign={{ top: "bottom" }} dropContent={
-                    <Box pad="medium" >
-                        <CheckBoxGroup a11yTitle="Choose Project or/and Hobby" value={filterValue}
-                            onChange={(event) => {
-                                console.log('value: ', event.value);
-                                console.log('option: ', event.option);
-                                setFilterValue(event.value);
-                                onFilterChange(event.value);
-                            }}
-                            options={["Projects", "Hobby"]} />
-                    </Box>
-                } />
-                <TextInput a11yTitle="" icon={<Search color="white" />} className="inputFilter" value={searchInput} onChange={(event) => {
-                    setSearchInput(event.target.value)
-                    console.log(event.target.value)
-                }} />
+            {languageChoise.map((content) => (
+                <React.Fragment>
+                    <Toolbar>
+                        <DropButton a11yTitle="Filter" style={{ marginTop: "-10px" }} icon={<Filter color="white" size="large"></Filter>} dropAlign={{ top: "bottom" }} dropContent={
+                            <Box pad="medium" >
+                                <CheckBoxGroup a11yTitle="Choose Project or/and Hobby" value={filterValue}
+                                    onChange={(event) => {
+                                        console.log('value: ', event.value);
+                                        console.log('option: ', event.option);
+                                        setFilterValue(event.value);
+                                        onFilterChange(event.value);
+                                    }}
+                                    options={[content.FilterProjekt,content.FilterHobby]} />
+                            </Box>
+                        } />
+                        <TextInput a11yTitle="" icon={<Search color="white" />} className="inputFilter" value={searchInput} onChange={(event) => {
+                            setSearchInput(event.target.value)
+                            console.log(event.target.value)
+                        }} />
 
-                <Button a11yTitle="Search" label="Search" primary className="mainButton" size="large" onClick={handleSearch} />
-            </Toolbar>
-        </Box>
+                        <Button a11yTitle={content.FilterSuche} label={content.FilterSuche} primary className="mainButton" size="large" onClick={handleSearch} />
+                    </Toolbar>
+                </React.Fragment>
+            ))
+            }
+        </Box >
     )
 }
 export default FilterTemp;

@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import {
     Box,
     Header,
@@ -7,13 +8,42 @@ import {
 import TabComponent from "../Components/Tab";
 import "../style/header.css"
 
-function HeaderTemp() {
+import English from "../static/English.json"
+import German from "../static/German.json"
+
+function HeaderTemp({ selectedLanguage }) {
+
+    const [language, setLanguage] = React.useState("")
+
+    const options = ["EN", "DE"];
+
+    const handleLanguage = (event) => {
+        setLanguage(event.value)
+        if (typeof selectedLanguage === "function") {
+            selectedLanguage(event.value);
+        }
+    }
+
+    const languageChoise = language === "EN" ? English.english : German.german;
+
+
+
+    useEffect(() => {
+        console.log("Language: ", language)
+    }, [language])
+
     return (
         <Header className="mainHeader">
-            <Box margin={"30px"}><TabComponent title1={"Home"} title2={"About Me"} title3={"My Work"} title4={"Contact Me"} a11yTitle="Headlines: Home, My Work, About Me, Contact Me" /></Box>
+            {languageChoise.map((content) => (
+                <React.Fragment>
+                    <Box margin={"30px"}><TabComponent title1={content.HeaderTitel1} title2={content.HeaderTitel2} title3={content.HeaderTitel3} title4={content.HeaderTitel4} a11yTitle="Headlines: Home, My Work, About Me, Contact Me" /></Box>
 
-            <Box margin={"30px"}><ToggleGroup a11yTitle="Toggle Between Englisch and German, current: Englisch" options={["EN", "DE"]} className="toggleHeader">
-            </ToggleGroup></Box>
+                    <Box margin={"30px"}><ToggleGroup a11yTitle="Toggle Between Englisch and German, current: Englisch" options={options} value={language} onToggle={handleLanguage} className="toggleHeader">
+                    </ToggleGroup>
+                    </Box>
+                </React.Fragment>
+            ))}
+
         </Header>
     )
 }

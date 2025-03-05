@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import App from "./client/App";
 import {Grommet} from 'grommet';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const colorTheme = {
   global: {
@@ -40,10 +39,11 @@ const colorTheme = {
 }
 
 
+
 root.render(
   <BrowserRouter>
   <Grommet theme={colorTheme}>
-  <App />
+      <App />
   </Grommet>
   </BrowserRouter>
 );

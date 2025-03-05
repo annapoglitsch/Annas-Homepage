@@ -1,0 +1,23 @@
+{
+    "english": [
+        {
+            "Willkommen": "Welcome.",
+            "ÜberschriftHome1": "Why is this",
+            "ÜberschriftHome2": "Website",
+            "ÜberschriftHome3": "accessible?",
+            "TextHome": "The website features several accessible elements, such as APCA-compliant color contrasts and font sizes. Additionally, the entire site is screen reader-friendly. Of course, this page is far from perfect, but continuous improvements are being made to enhance its accessibility.",
+            "FooterKontakt": "Contact Me",
+            "HeaderTitel1": "Home",
+            "HeaderTitel2": "About Me",
+            "HeaderTitel3": "My Work",
+            "HeaderTitel4": "Contact Me",
+            "AboutMeText": "During my school career, I discovered my curiosity for technology, data processing, and its protection. My first encounters were in the lower grades during the computer science practice, which led me to choose the technical track and my current education. The study program in Computer Science and Digital Communication combines all the areas I want to explore further and eventually master. Since then, mathematics, programming, and various team projects have been part of my daily life. I have learned to adapt to new workflows, stay focused on my goal, and ask for help when needed. In addition to my studies, I work part-time at ITSV, where I can apply what I have learned in practice.",
+            "InFreizeitAboutMe": "In my free time I like to...",
+            "TitelWork": "Let's Talk About Work.",
+            "UntertitelWork": "I want to know something about...",
+            "FilterProjekt": "Projects",
+            "FilterHobby": "Hobbys",
+            "FilterSuche": "Search"
+        }
+    ]
+}
