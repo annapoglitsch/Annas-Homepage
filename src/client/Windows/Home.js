@@ -2,22 +2,27 @@ import React from 'react';
 import '../style/home.css'
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
+import { useFetchLanguage } from "../static/UseEffect";
 
-function Home() {
+function Home({ language, setLanguage }) {
 
-  var homePara = `Die Website weist einige barrierefreie Elemente auf, wie APCA entsprechende Farbkontraste und Schriftgrößen. 
-    Zusätzlich ist die gesamte Seite Screenreader-friendly. Natürlich ist diese Seite weit entfernt von perfekt aber
-    es wird laufen an der Verbesserung an barrierefreien Elementen gearbeitet.`;
+  const content = useFetchLanguage(language);
+
+
+  if (!content) {
+    return <div>Loading...</div>;
+  }
+  const languageContent = content.language[0];
 
   return (
     <div className='mainDis'>
       {/* Header Section */}
-      <Header />
+      <Header languageChoice={languageContent} setLanguageChoice={setLanguage}/>
 
       {/* Welcome Section */}
       <div className='content' >
-        <h1 aria-label='Welcome wishes Anna Poglitsch.' className='welcomeFont'>
-          Welcome.
+        <h1 aria-label={languageContent.Willkommen} className='welcomeFont'>
+        {languageContent.Willkommen}
         </h1>
       </div>
       <div className='annaPoglitschDiv'>
@@ -31,15 +36,15 @@ function Home() {
         </div>
         <div className='mainTextContainer'>
           <div className='titleTextContainer'>
-            <h2 aria-label='Why is this website accessable?' className='titleText'>Why is this website accessable?</h2>
+            <h2 aria-label='Why is this website accessable?' className='titleText'>{languageContent.ÜberschriftHome1} {languageContent.ÜberschriftHome2} {languageContent.ÜberschriftHome3}</h2>
           </div>
           <div className='paragraphTextDiv'>
-            <p aria-label={homePara} className='textParagraph'>{homePara}</p>
+            <p aria-label={languageContent.TextHome} className='textParagraph'>{languageContent.TextHome}</p>
           </div>
         </div>
       </div>
       {/* Footer Section */}
-      <Footer />
+      <Footer languageChoice={languageContent} />
 
     </div>
   );

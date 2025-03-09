@@ -7,21 +7,29 @@ import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
 import { Divider } from "@heroui/divider";
 import "../style/main.css"
 import contactMeCards from "../static/contactMeCards.json"
+import { useFetchLanguage } from "../static/UseEffect";
 
-export function ContactWindowLocation() {
+export function ContactWindowLocation({ language, setLanguage }) {
+    const content = useFetchLanguage(language);
+
+
+    if (!content) {
+      return <div>Loading...</div>;
+    }
+    const languageContent = content.language[0];
 
     return (
         <div className='mainDis'>
             {/* Header Section */}
-            <Header />
+            <Header languageChoice={languageContent} setLanguageChoice={setLanguage}/>
 
             <div style={{justifySelf: "center", display: "column"}} >
-                <h1 aria-label="Contact Me" className='pageTitle'>
-                    Contact Me.
+                <h1 aria-label={languageContent.ContactMeTitel} className='pageTitle'>
+                    {languageContent.ContactMeTitel}
                 </h1>
-                <ContactInput></ContactInput>
+                <ContactInput languageChoice={languageContent}></ContactInput>
             </div>
-            <div className="cardInfo" style={{marginBottom:"4%", width:"60%", marginTop: "10%", marginLeft: "2 0%"}}>
+            <div className="cardInfo" style={{marginBottom:"4%", width:"60%", marginTop: "10%", marginLeft: "20%"}}>
                 {contactMeCards.contactMeCards.map(card => {
                     return(
                           <Card  style={{ background: "white", width: "100%", height: "auto", fontSize: "20px" }}>
@@ -46,7 +54,7 @@ export function ContactWindowLocation() {
             </div>
           
             {/* Footer Section */}
-            <Footer />
+            <Footer languageChoice={languageContent} />
 
         </div>
     );

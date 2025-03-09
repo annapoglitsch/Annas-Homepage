@@ -15,7 +15,7 @@ export const filterIcon = ({ width = 48, height = 48 }) => {
 }
 
 
-function FilterWork({onSearch, onFilterChange}) {
+function FilterWork({onSearch, onFilterChange, languageChoice}) {
 
 
     const [searchInput, setSearchInput] = React.useState("")
@@ -59,15 +59,15 @@ function FilterWork({onSearch, onFilterChange}) {
                 </DropdownTrigger>
                 <DropdownMenu  className="dropdown-menu">
                     <DropdownItem className="dropdown-item">
-                        <Checkbox aria-label="Checkbox Projects" type="checkbox" name="Projects" style={{ color: "black" }} onChange={handleCheckBox}>Projects</Checkbox>
+                        <Checkbox aria-label={languageChoice.FilterProjekt} type="checkbox" name="Projects" style={{ color: "black" }} onChange={handleCheckBox}>{languageChoice.FilterProjekt}</Checkbox>
                     </DropdownItem>
                     <DropdownItem className="dropdown-item">
-                        <Checkbox aria-label="Checkbox Hobby" type="checkbox" name="Hobby" onChange={handleCheckBox}>Hobby</Checkbox>
+                        <Checkbox aria-label={languageChoice.FilterHobby} type="checkbox" name="Hobby" onChange={handleCheckBox}>{languageChoice.FilterHobby}</Checkbox>
                     </DropdownItem>
                 </DropdownMenu>
             </Dropdown>
-            <Input aria-label="Please enter anything you want to search for." type="text" placeholder="Input Search..." className="workInput" style={{ fontSize: "30px", borderColor: "#D6C9B4", borderWidth: "3px", fontFamily: "Roboto" }} value={searchInput} onChange={handleSearch} ></Input>
-            <Button aria-label="Submit Search" className='mainButton' onClick={submitSearch}>Search</Button>
+            <Input aria-label="Please enter anything you want to search for." type="text" placeholder={languageChoice.FilterSuche} className="workInput" style={{ fontSize: "30px", borderColor: "#D6C9B4", borderWidth: "3px", fontFamily: "Roboto" }} value={searchInput} onChange={handleSearch} ></Input>
+            <Button aria-label={languageChoice.FilterSuche} className='mainButton' onClick={submitSearch}>{languageChoice.FilterSuche}</Button>
         </div>
 
     );

@@ -8,17 +8,22 @@ import aboutMeCards from "../static/aboutMeCards.json"
 import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
 import { Link } from "@heroui/link";
 import { Divider } from "@heroui/divider";
+import { useFetchLanguage } from "../static/UseEffect";
 
 
+function AboutMe({ language, setLanguage }) {
 
-function AboutMe() {
+    const content = useFetchLanguage(language);
 
-    var aboutMeText= `Im Zuge meiner Schullaufbahn habe ich meine Neugier für Technik, Datenverarbeitung und dessen Schutz entdeckt. Meine ersten Berührungspunkte habe ich in der Unterstufe in der Übung Informatik gemacht, was dazu geführt hat, dass ich mich anschließend für den Realzweig und für meine derzeitige Ausbildung entschieden habe. Das Studium Computer Science and Digital Communication vereint alle Themenbereiche, die ich näher kennenlernen will und in weiterer Folge beherrschen. Seit her begleitet mich Mathematik, Programmieren und verschiedenste Team-Projekte täglich durch mein Leben. Ich habe gelernt mich an neue Funktionsabläufe anzupassen, konsequent an meinem Ziel zu bleiben und wenn nötig, nach Hilfe zu fragen. Neben meinem Studium, arbeite ich geringfügig bei der ITSV, wo ich Gelerntes in die Realität umsetzen darf.`;
 
+  if (!content) {
+    return <div>Loading...</div>;
+  }
+  const languageContent = content.language[0];
 
     return (
         <div className='mainDis'>
-            <Header></Header>
+            <Header languageChoice={languageContent} setLanguageChoice={setLanguage}></Header>
             <div style={{ direction: "column", textAlign: "center", marginBottom: "130px" }}>
                 <h1 className='pageTitle'>Anna Poglitsch.</h1>
                 <div style={{
@@ -34,11 +39,11 @@ function AboutMe() {
                         src="https://heroui.com/images/hero-card-complete.jpeg"
 
                     />
-                    <p aria-label={aboutMeText} className='aboutMeParagraph' >
-                       {aboutMeText}</p>
+                    <p aria-label= {languageContent.AboutMeText} className='aboutMeParagraph' >
+                        {languageContent.AboutMeText}</p>
                 </div>
                 <div className='hobbyDiv'>
-                    <h2 aria-label='In my free time I like to...' className='aboutMeFreeTime'>In my free time I like to...</h2>
+                    <h2 aria-label={languageContent.InFreizeitAboutMe} className='aboutMeFreeTime'>{languageContent.InFreizeitAboutMe}</h2>
                     <div className='cardInfo' style={{marginTop: "5%"}}>
                         {aboutMeCards.aboutMeCards.map(card => {
                             return (
@@ -64,7 +69,7 @@ function AboutMe() {
 
                 </div>
             </div>
-            <Footer></Footer>
+            <Footer languageChoice={languageContent} ></Footer>
         </div>
     )
 }

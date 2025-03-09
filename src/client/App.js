@@ -4,14 +4,19 @@ import  Home  from "./Windows/Home"
 import MyWork from "./Windows/MyWork"
 import AboutMe from "./Windows/AboutMe"
 import ContactMe from "./Windows/Contact"
+import { useState } from "react";
+import React from 'react';
+
 function App(){
+    const [language, setLanguage] = useState("EN");
+
     return(
         <BrowserRouter>
         < Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/mywork" element={<MyWork/>}></Route>
-        <Route path="/aboutme" element={<AboutMe/>}></Route>
-        <Route path="/contact" element={<ContactMe/>}></Route>
+        <Route path="/" element={<Home language={language} setLanguage={setLanguage}/>}></Route>
+        <Route path="/mywork" element={<MyWork language={language} setLanguage={setLanguage}/>}></Route>
+        <Route path="/aboutme" element={<AboutMe language={language} setLanguage={setLanguage}/>}></Route>
+        <Route path="/contact" element={<ContactMe language={language} setLanguage={setLanguage}/>}></Route>
         </Routes>
         </BrowserRouter>
     )
