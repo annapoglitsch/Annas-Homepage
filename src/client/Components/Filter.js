@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
+import { useState } from "react";
 import { Toolbar, TextInput, Button, Box, CheckBoxGroup, DropButton } from "grommet";
 import { Search } from "grommet-icons";
 import { Filter } from "grommet-icons";
 import "../style/main.css"
 import "../style/mywork.css"
-import English from "../static/English.json"
-import German from "../static/German.json"
-
+import { useFetchLanguage } from "../static/UseEffect";
 function FilterTemp({ onSearch, onFilterChange }) {
 
     const [searchInput, setSearchInput] = React.useState("")
@@ -22,15 +21,20 @@ function FilterTemp({ onSearch, onFilterChange }) {
         console.log("Filter: ", filterValue)
     }, [searchInput, filterValue])
 
-    const [selectedLanguage, setSelectedLanguage] = React.useState("");
 
-
-    const languageChoise = selectedLanguage === "EN" ? English.english : German.german;
+    const [languageChoice, setLanguageChoice] = useState("EN");
+    
+    const content = useFetchLanguage(languageChoice);
+    
+    
+    if (!content) {
+      return <div>Loading...</div>; 
+    }
+    const languageContent = content.english[0];
 
     return (
         <Box>
-            {languageChoise.map((content) => (
-                <React.Fragment>
+            
                     <Toolbar>
                         <DropButton a11yTitle="Filter" style={{ marginTop: "-10px" }} icon={<Filter color="white" size="large"></Filter>} dropAlign={{ top: "bottom" }} dropContent={
                             <Box pad="medium" >
@@ -41,7 +45,7 @@ function FilterTemp({ onSearch, onFilterChange }) {
                                         setFilterValue(event.value);
                                         onFilterChange(event.value);
                                     }}
-                                    options={[content.FilterProjekt,content.FilterHobby]} />
+                                    options={[languageContent.FilterProjekt,languageContent.FilterHobby]} />
                             </Box>
                         } />
                         <TextInput a11yTitle="" icon={<Search color="white" />} className="inputFilter" value={searchInput} onChange={(event) => {
@@ -49,11 +53,9 @@ function FilterTemp({ onSearch, onFilterChange }) {
                             console.log(event.target.value)
                         }} />
 
-                        <Button a11yTitle={content.FilterSuche} label={content.FilterSuche} primary className="mainButton" size="large" onClick={handleSearch} />
+                        <Button a11yTitle={languageContent.FilterSuche} label={languageContent.FilterSuche} primary className="mainButton" size="large" onClick={handleSearch} />
                     </Toolbar>
-                </React.Fragment>
-            ))
-            }
+          
         </Box >
     )
 }

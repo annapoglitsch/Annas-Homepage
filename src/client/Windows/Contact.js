@@ -1,5 +1,6 @@
 import React from "react";
 import { } from "grommet";
+import { useState } from "react";
 import { useEffect } from "react";
 import HeaderTemp from "../Components/Header";
 import FooterTemp from "../Components/Footer";
@@ -18,36 +19,30 @@ import SendMessage from "../Components/SendMessage";
 import "../style/contactme.css"
 import "../style/main.css"
 import contactMeCard from "../static/ContactMeCard.json"
-import English from "../static/English.json"
-import German from "../static/German.json"
+import { useFetchLanguage } from "../static/UseEffect";
 
 export function ContactWindowLocation() {
+const [languageChoice, setLanguageChoice] = useState("EN");
+
+const content = useFetchLanguage(languageChoice);
 
 
+if (!content) {
+  return <div>Loading...</div>; 
+}
+const languageContent = content.english[0];
 
-  const [selectedLanguage, setSelectedLanguage] = React.useState("");
-
-
-  const languageChoise = selectedLanguage === "EN" ? English.english : German.german;
-
-  useEffect(() => {
-      console.log("Contact", selectedLanguage)
-      console.log("ContactM;e:", languageChoise)
-    },
-      [selectedLanguage, languageChoise])
 
   return (
     <Grommet>
       <Page className="mainPage">
         {/*Header */}
-        <HeaderTemp selectedLanguage={setSelectedLanguage}></HeaderTemp>
-        {languageChoise.map((content) => (
-          <React.Fragment>
-            <PageHeader a11yTitle={content.ContactMeTitel} title={
-              <Heading size="xlarge" className="contactMeTitle">{content.ContactMeTitel}</Heading>
+        <HeaderTemp languageChoice={languageContent}></HeaderTemp>
+            <PageHeader a11yTitle={languageContent.ContactMeTitel} title={
+              <Heading size="xlarge" className="contactMeTitle">{languageContent.ContactMeTitel}</Heading>
             } alignSelf="center" />
             <Box style={{ paddingBottom: "6%" }}>
-              <SendMessage language={selectedLanguage}></SendMessage>
+              <SendMessage ></SendMessage>
             </Box>
             <Box direction="row" pad={"medium"} gap={"xlarge"} alignSelf="center" style={{ paddingBottom: "6%" }}>
               {contactMeCard.contactMeCard.map(card => {
@@ -60,10 +55,8 @@ export function ContactWindowLocation() {
                 </Card>)
               })}
             </Box>
-          </React.Fragment>
-        ))}
         {/*Footer */}
-        <FooterTemp language={selectedLanguage}></FooterTemp>
+        <FooterTemp languageChoice={languageContent}></FooterTemp>
       </Page>
     </Grommet>
   );

@@ -1,0 +1,29 @@
+{
+    "german": [
+        {
+            "Willkommen": "Willkommen.", 
+            "ÜberschriftHome1": "Warum ist diese",
+            "ÜberschriftHome2": "Website",
+            "ÜberschriftHome3": "Barrierefrei?",
+            "TextHome": "Die Website weist einige barrierefreie Elemente auf, wie APCA entsprechende Farbkontraste und Schriftgrößen. Zusätzlich ist die gesamte Seite Screenreader-friendly. Natürlich ist diese Seite weit entfernt von perfekt aber es wird laufen an der Verbesserung an barrierefreien Elementen gearbeitet.",
+            "FooterKontakt": "Kontaktiere mich",
+            "HeaderTitel1": "Übersicht",
+            "HeaderTitel2": "Über mich",
+            "HeaderTitel3": "Meine Arbeit",
+            "HeaderTitel4": "Kontaktiere mich",
+            "AboutMeText": "Im Zuge meiner Schullaufbahn habe ich meine Neugier für Technik, Datenverarbeitung und dessen Schutz entdeckt. Meine ersten Berührungspunkte habe ich in der Unterstufe in der Übung Informatik gemacht, was dazu geführt hat, dass ich mich anschließend für den Realzweig und für meine derzeitige Ausbildung entschieden habe. Das Studium Computer Science and Digital Communication vereint alle Themenbereiche, die ich näher kennenlernen will und in weiterer Folge beherrschen. Seit her begleitet mich Mathematik, Programmieren und verschiedenste Team-Projekte täglich durch mein Leben. Ich habe gelernt mich an neue Funktionsabläufe anzupassen, konsequent an meinem Ziel zu bleiben und wenn nötig, nach Hilfe zu fragen. Neben meinem Studium arbeite ich geringfügig bei der ITSV, wo ich Gelerntes in die Realität umsetzen darf.",
+            "InFreizeitAboutMe": "In meiner Freizeit mag ich...",
+            "TitelWork": "Lass uns über Arbeit sprechen.",
+            "UntertitelWork": "Ich will etwas wissen über...",
+            "FilterProjekt": "Projekte",
+            "FilterHobby": "Hobbys",
+            "FilterSuche": "Suche",
+            "ContactMeTitel": "Kontaktiere mich.",
+            "SendMessageButton1": "Abschicken",
+            "SendMessageButton2": "Zurücksetzen/Löschen"
+
+
+
+        }
+    ]
+}  

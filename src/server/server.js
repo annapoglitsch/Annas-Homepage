@@ -4,13 +4,18 @@ import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
 import { checkIfEmailisValid } from './logic/logicFun.js';
+import { error } from "console";
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(cors({ origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
-  credentials: true }));
+let languageTemp = "EN";
+
+app.use(cors({
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
+  credentials: true
+}));
 
 app.use(express.json());
 
@@ -73,11 +78,11 @@ app.post('/mywork', async (req, res) => {
       return res.status(200).json(data.cards)
     }
 
-   if (searchInput == ""){
-    searchInput = "pseudoInput";
-   }
+    if (searchInput == "") {
+      searchInput = "pseudoInput";
+    }
 
-   console.log("Searchinpuuut: ", searchInput);
+    console.log("Searchinpuuut: ", searchInput);
 
     const filteredCards = data.cards.filter(card =>
       card.header.toLowerCase().includes(searchInput.toLowerCase()) ||
@@ -97,7 +102,83 @@ app.post('/mywork', async (req, res) => {
 
 });
 
+app.post("/sendLanguage", async (req, res) => {
 
+  const { selectedLanguage } = req.body;
+console.log("Selected language", selectedLanguage)
+
+
+  const data = { selectedLanguage };
+  console.log("Received: ", data.selectedLanguage);
+
+  if (data.selectedLanguage === "EN") {
+    languageTemp = "EN";
+    res.status(200).json({ message: 'Data saved successfully' });
+  } else if (data.selectedLanguage === "DE") {
+    languageTemp = "DE";
+    res.status(200).json({ message: 'Data saved successfully' });
+  } else {
+    res.status(404).send("No language was found")
+  }
+});
+
+/*app.get("/sendLanguageJSON", async (req, res) => {
+  const filePath = path.join(__dirname, "English.json");
+  const filePathTwo = path.join(__dirname, "German.json");
+
+fs.readFile(filePath, "utf8", (error, data) => {
+  if(error){
+    return res.status(500).json({error: "Error with JSON File"})
+  }
+  res.json(JSON.parse(data));
+})
+  try {
+    let filePath = null;
+
+    if (languageTemp === "EN") {
+      filePath = path.join(__dirname, "./English.json");
+    } else if (languageTemp === "DE") {
+      filePath = path.join(__dirname, "./German.json");
+    } else {
+      return res.status(400).json({ error: "No valid language selected" });
+    }
+
+    const data = await fs.readFile(filePath, "utf8");
+    res.json(JSON.parse(data));
+  } catch (error) {
+    console.error("Error loading JSON file:", error);
+    res.status(500).json({ error: "Failed to load JSON file" });
+  }
+});*/
+
+const dataEN = "English.json";
+const dataDE = "German.json";
+
+app.get("/sendLanguageJSON", async (req, res) => {
+  try {
+    const { language } = req.query;
+
+    if (!language) {
+      return res.status(400).json({ error: "No language selected" });
+    }
+
+    languageTemp = language.toUpperCase();
+    console.log("LanguageTemp:", languageTemp);
+
+    if (languageTemp === "EN") {
+      res.header("Content-Type", "application/json");
+      res.sendFile(path.resolve(dataEN)); 
+    } else if (languageTemp === "DE") {
+      res.header("Content-Type", "application/json");
+      res.sendFile(path.resolve(dataDE)); 
+    } else {
+      return res.status(400).json({ error: "Invalid language" });
+    }
+  } catch (error) {
+    console.error("Error loading JSON file:", error);
+    res.status(500).json({ error: "Failed to load JSON file" });
+  }
+});
 
 app.listen(5000, () => {
   console.log('Server running on http://localhost:5000');

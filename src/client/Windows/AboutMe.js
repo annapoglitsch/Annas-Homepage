@@ -21,28 +21,26 @@ import FooterTemp from "../Components/Footer";
 import "../style/aboutme.css"
 import "../style/main.css"
 import hobbys from "../static/hobbyCard.json"
-
-import English from "../static/English.json"
-import German from "../static/German.json"
-
+import { useFetchLanguage } from "../static/UseEffect";
 
 function AboutMe() {
 
+const [languageChoice, setLanguageChoice] = useState("EN");
 
-  const [selectedLanguage, setSelectedLanguage] = React.useState("");
+const content = useFetchLanguage(languageChoice);
 
 
-  const languageChoise = selectedLanguage === "EN" ? English.english : German.german;
-
+if (!content) {
+  return <div>Loading...</div>; 
+}
+const languageContent = content.english[0];
  
 
   return (
     <Grommet >
       <Page style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         {/*Header */}
-        <HeaderTemp selectedLanguage={setSelectedLanguage}></HeaderTemp>
-        {languageChoise.map((content) => (
-          <React.Fragment>
+        <HeaderTemp  languageChoice={languageContent}  ></HeaderTemp>
             <PageHeader a11yTitle="Welcome" title={
               <Heading size="xlarge" className="aboutMeTitle" a11yTitle="Who am I, find out.">Anna Poglitsch.</Heading>
             } alignSelf="center" />
@@ -55,12 +53,12 @@ function AboutMe() {
             </Box>
               
 
-              <Paragraph a11yTitle={content.AboutMeText} margin="none" style={{ color: "white", fontSize: "25px" }}>
-                {content.AboutMeText}
+              <Paragraph a11yTitle={languageContent.AboutMeText} margin="none" style={{ color: "white", fontSize: "25px" }}>
+                {languageContent.AboutMeText}
               </Paragraph>
             </Box>
             <Box className="aboutMeBox">
-              <Text className="hobbyText">{content.InFreizeitAboutMe}</Text>
+              <Text className="hobbyText">{languageContent.InFreizeitAboutMe}</Text>
               <Box direction="row" pad={"medium"} gap={"xlarge"} alignSelf="center">
                 {hobbys.hobbys.map(card => {
                   return (<Card height="medium" width="medium" background="light-1" className="cardStyle">
@@ -73,11 +71,9 @@ function AboutMe() {
                 })}
               </Box>
             </Box >
-          </React.Fragment>
-        ))}
 
         {/*Footer */}
-        <FooterTemp language={selectedLanguage}></FooterTemp>
+        <FooterTemp ></FooterTemp>
       </Page>
     </Grommet>
   );

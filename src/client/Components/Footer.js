@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+import { useState } from "react";
 import {
   Box,
   Footer,
@@ -9,43 +10,27 @@ import {
 import { Instagram } from 'grommet-icons';
 import { MailOption } from 'grommet-icons'
 import "../style/footer.css"
-import English from "../static/English.json"
-import German from "../static/German.json"
+import { useFetchLanguage } from "../static/UseEffect";
 
-function FooterTemp({language}) {
+function FooterTemp() {
+  const [languageChoice, setLanguageChoice] = useState("EN");
+  
+  const content = useFetchLanguage(languageChoice);
 
-
-  const languageChoise = language === "EN" ? English.english : German.german;
-
-
-  useEffect(() => {
-    console.log("LanguageChoiseFooter:", language)
-  },
-    [ language]
-
-  )
+  if (!content) {
+    return <div>Loading...</div>; // Show loading state until the content is loaded
+  }
 
   return (
-
     <Footer className="footerMain">
-
-      {languageChoise.map((content) => (
-          <React.Fragment>
-          <Text className="footerText" a11yTitle="Copyright 2025">Copyright © 2025</Text>
-          <Box direction="row" align="center" gap="small" margin={"30px"}>
-            <Instagram a11yTitle="Link to instagram" color="plain" />
-            <MailOption a11yTitle="Contact me via Email" color="plain" />
-          </Box>
-          <Anchor
-            a11yTitle={content.FooterKontakt}
-            className="footerText"
-            label={content.FooterKontakt}
-          />
-          </React.Fragment>
-      ))}
-
+      <Text className="footerText" a11yTitle="Copyright 2025">Copyright © 2025</Text>
+      <Box direction="row" align="center" gap="small" margin={"30px"}>
+        <Instagram a11yTitle="Link to Instagram" color="plain" />
+        <MailOption a11yTitle="Contact me via Email" color="plain" />
+      </Box>
+      <Anchor a11yTitle={content.FooterKontakt} className="footerText" label={content.FooterKontakt} />
     </Footer>
-
-  )
+  );
 }
+
 export default FooterTemp;

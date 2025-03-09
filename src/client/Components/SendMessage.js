@@ -4,14 +4,12 @@ import { Box, Button, Form, FormField, TextInput, TextArea } from 'grommet';
 import "../style/main.css"
 import { colors } from 'grommet/themes/base';
 import "../style/contactme.css"
-import English from "../static/English.json"
-import German from "../static/German.json"
+import { useFetchLanguage } from '../static/UseEffect';
 
-function SendMessage({language}) {
+function SendMessage() {
 
     const [email, setEmail] = React.useState('');
     const [message, setMessage] = React.useState('');
-    const languageChoise = language === "EN" ? English.english : German.german;
     const handleSumbit = async () => {
 
         const data = {
@@ -38,11 +36,18 @@ function SendMessage({language}) {
         setEmail("");
         setMessage("");
     }
+const [languageChoice, setLanguageChoice] = useState("EN");
+
+const content = useFetchLanguage(languageChoice);
+
+
+if (!content) {
+  return <div>Loading...</div>; 
+}
+const languageContent = content.english[0];
 
     return (
         <Box width={"400px"} alignSelf='center'>
-            {languageChoise.map((content) => (
-                <React.Fragment>
                     <Form
                         value={email}
                         onChange={nextValue => setEmail(nextValue)}
@@ -62,11 +67,9 @@ function SendMessage({language}) {
                         onChange={event => setMessage(event.target.value)}
                     />
                     <Box direction="row" gap="medium" style={{ paddingTop: "20px" }}>
-                        <Button a11yTitle={content.SendMessageButton1} type="submit" primary label={content.SendMessageButton1} className="mainButton" size='large' onClick={handleSumbit} />
-                        <Button a11yTitle={content.SendMessageButton2} type="reset" label={content.SendMessageButton2} className='mainButton' size='large' onClick={handleREset} />
+                        <Button a11yTitle={languageContent.SendMessageButton1} type="submit" primary label={languageContent.SendMessageButton1} className="mainButton" size='large' onClick={handleSumbit} />
+                        <Button a11yTitle={languageContent.SendMessageButton2} type="reset" label={languageContent.SendMessageButton2} className='mainButton' size='large' onClick={handleREset} />
                     </Box>
-                </React.Fragment>
-            ))}
         </Box>
 
     );
