@@ -5,18 +5,24 @@ import Footer from "../Components/Footer";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
+import { useState } from "react";
+import { useFetchLanguage } from "../static/UseEffect";
 
-function Home() {
+function Home({ language, setLanguage }) {
 
-    var homePara = `Die Website weist einige barrierefreie Elemente auf, wie APCA entsprechende Farbkontraste und Schriftgrößen. 
-    Zusätzlich ist die gesamte Seite Screenreader-friendly. Natürlich ist diese Seite weit entfernt von perfekt aber
-    es wird laufen an der Verbesserung an barrierefreien Elementen gearbeitet.`;
+    const content = useFetchLanguage(language);
+
+
+    if (!content) {
+        return <div>Loading...</div>;
+    }
+    const languageContent = content.language[0];
 
     return (
         <div>
-            <Header></Header>
+            <Header languageChoice={languageContent} setLanguageChoice={setLanguage} ></Header>
             <div className="main-content">
-                <h1 aria-label="Welcome wishes Anna Poglitsch" className="welcomeFont">Welcome.</h1>
+                <h1 aria-label={languageContent.Willkommen} className="welcomeFont">{languageContent.Willkommen}</h1>
                 <div className="annapoglitschdiv">
                     <h2 aria-label="" className="annapoglitsch">Anna Poglitsch</h2>
                 </div>
@@ -28,21 +34,23 @@ function Home() {
                     </Container>
 
                     <Col className="mainTextContainer">
-                        <Container className="headlineTextContainer">
+                        <Container className="headlineTextContainer mt-3 mb-3 p-3">
                             <p aria-label="Warum ist diese Website Barrierefrei?" className="headlineText">
-                                Warum ist diese Website Barrierefrei?
+                                {languageContent.ÜberschriftHome1} {languageContent.ÜberschriftHome2}
                             </p>
+                            <p className="headlineText">{languageContent.ÜberschriftHome3}</p>
+
                         </Container>
                         <Container className="explainTextContainer">
-                            <p aria-label={homePara} className="explainText">
-                            {homePara}
+                            <p aria-label={languageContent.TextHome} className="explainText">
+                                {languageContent.TextHome}
                             </p>
                         </Container>
                     </Col>
 
                 </Row>
             </div>
-            <Footer></Footer>
+            <Footer languageChoice={languageContent} ></Footer>
         </div>
     )
 }

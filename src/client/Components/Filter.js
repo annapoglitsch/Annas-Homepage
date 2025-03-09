@@ -6,7 +6,7 @@ import { Dropdown, DropdownButton, Form } from 'react-bootstrap';
 import 'react-dropdown/style.css';
 import { BsFilter } from "react-icons/bs";
 
-function Filter({onSearch, onFilterChange}) {
+function Filter({onSearch, onFilterChange, languageChoice }) {
 
     const [searchInput, setSearchInput] = React.useState("")
     let [filterValue, setFilterValue] = React.useState([]);
@@ -45,7 +45,7 @@ function Filter({onSearch, onFilterChange}) {
              <DropdownButton style={{marginRight: "5%"}} title={<BsFilter size={40}/>}>
                 <Dropdown.Item as="div">
                     <Form.Check
-                    aria-label="Projects"
+                    aria-label={languageChoice.FilterProjekt}
                         type="checkbox"
                         label="Projects"
                         name="Projects"
@@ -54,7 +54,7 @@ function Filter({onSearch, onFilterChange}) {
                 </Dropdown.Item>
                 <Dropdown.Item as="div">
                     <Form.Check
-                    aria-label="Hobby"
+                    aria-label={languageChoice.FilterHobby}
                         type="checkbox"
                         label="Hobby"
                         name="Hobby"
@@ -71,7 +71,7 @@ function Filter({onSearch, onFilterChange}) {
            
 
             <div className="col-auto">
-                <Button aria-label="Submit Search" className="ButtonWork" variant="primary" type="button" onClick={submitSearch}>Search</Button>
+                <Button aria-label={languageChoice.FilterSuche} className="ButtonWork" variant="primary" type="button" onClick={submitSearch}>{languageChoice.FilterSuche}</Button>
             </div>
         </Form>
     )

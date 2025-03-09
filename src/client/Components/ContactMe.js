@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import "../style/contact.css";
 import Button from "react-bootstrap/Button";
 
-function ContactMe() {
+function ContactMe({languageChoice}) {
   const [email, setEmail] = React.useState('');
   const [message, setMessage] = React.useState('');
 
@@ -38,7 +38,7 @@ function ContactMe() {
   return (
     <Form style={{ width: "400px", justifyContent: "center" }}>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label aria-label="Please enter your email address in the input field." className="inputFont">Email address</Form.Label>
+        <Form.Label aria-label="Email" className="inputFont">Email</Form.Label>
         <Form.Control
         aria-label="Input field"
           type="email"
@@ -61,11 +61,11 @@ function ContactMe() {
           onChange={event => setMessage(event.target.value)}
         />
       </Form.Group>
-      <Button aria-label="Submit Message" className="SubmitResetOne" onClick={handleSumbit}>
-        Submit
+      <Button aria-label={languageChoice.SendMessageButton1} className="SubmitResetOne" onClick={handleSumbit}>
+      {languageChoice.SendMessageButton1}
       </Button>
-      <Button aria-label="Reset email and message field." className="SubmitResetTwo" onClick={handleREset}>
-        Reset
+      <Button aria-label={languageChoice.SendMessageButton2}  className="SubmitResetTwo" onClick={handleREset}>
+      {languageChoice.SendMessageButton2} 
       </Button>
 
     </Form>

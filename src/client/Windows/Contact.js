@@ -10,15 +10,26 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/esm/Container";
 import cards from "../static/contactMe.json"
 import "../style/card.css"
+import { useState } from "react";
+import { useFetchLanguage } from "../static/UseEffect";
 
-function Contact() {
+function Contact({ language, setLanguage }) {
+
+    const content = useFetchLanguage(language);
+
+
+  if (!content) {
+    return <div>Loading...</div>;
+  }
+  const languageContent = content.language[0];
+
     return (
         <div>
-            <Header></Header>
+            <Header languageChoice={languageContent} setLanguageChoice={setLanguage}></Header>
             <div className="divMAin">
                 <div style={{marginTop: "20%", justifyContent: "center", marginBottom: "10%"}}>
-                    <h1 aria-label="Contact Me" className="fontwelcome">Contact Me.</h1>
-                    <ContactMe></ContactMe>
+                    <h1 aria-label={languageContent.ContactMeTitel} className="fontwelcome">{languageContent.ContactMeTitel}.</h1>
+                    <ContactMe languageChoice={languageContent}></ContactMe>
                 </div>
 
                 <div className="contactCardDiv">
@@ -45,7 +56,7 @@ function Contact() {
                     </Container>
                 </div>
             </div>
-            <Footer></Footer>
+            <Footer languageChoice={languageContent}></Footer>
         </div>
     )
 }

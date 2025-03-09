@@ -4,7 +4,10 @@ import "../style/mywork.css";
 import Footer from "../Components/Footer";
 import CardWork from "../Components/CardWork";
 import Filter from "../Components/Filter"
-function MyWork() {
+import { useState } from "react";
+import { useFetchLanguage } from "../static/UseEffect";
+
+function MyWork({ language, setLanguage }) {
 
     const [searchValue, setSearchValue] = React.useState("");
     const [filterValue, setFilterValue] = React.useState([]);
@@ -13,18 +16,26 @@ function MyWork() {
         console.log("My Work: ", searchValue, filterValue)
     }, [searchValue, filterValue])
 
+    const content = useFetchLanguage(language);
+
+
+  if (!content) {
+    return <div>Loading...</div>;
+  }
+  const languageContent = content.language[0];
+
     return (
         <div>
-            <Header></Header>
+            <Header languageChoice={languageContent} setLanguageChoice={setLanguage}></Header>
             <div className="main-contentDiv">
 
-                <h1 aria-label="Let's Talk About Work." className="workFont" >Let's Talk About Work.</h1>
-                <h1 aria-label="I want to know something about..." className="IwantFont"> I want to know something about...</h1>
-               <Filter onSearch={setSearchValue} onFilterChange={setFilterValue}></Filter>
+                <h1 aria-label={languageContent.TitelWork} className="workFont" >{languageContent.TitelWork}.</h1>
+                <h1 aria-label={languageContent.UntertitelWork} className="IwantFont">{languageContent.UntertitelWork}</h1>
+               <Filter onSearch={setSearchValue} onFilterChange={setFilterValue} languageChoice={languageContent}></Filter>
                 <div className="cardContainerWork">
                     <CardWork searchValue={searchValue} filterValue={filterValue}></CardWork>
                 </div>
-                <Footer></Footer>
+                <Footer languageChoice={languageContent}></Footer>
             </div>
 
         </div>
