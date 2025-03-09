@@ -4,9 +4,8 @@ import { Box, Button, Form, FormField, TextInput, TextArea } from 'grommet';
 import "../style/main.css"
 import { colors } from 'grommet/themes/base';
 import "../style/contactme.css"
-import { useFetchLanguage } from '../static/UseEffect';
 
-function SendMessage() {
+function SendMessage({languageChoice}) {
 
     const [email, setEmail] = React.useState('');
     const [message, setMessage] = React.useState('');
@@ -36,15 +35,6 @@ function SendMessage() {
         setEmail("");
         setMessage("");
     }
-const [languageChoice, setLanguageChoice] = useState("EN");
-
-const content = useFetchLanguage(languageChoice);
-
-
-if (!content) {
-  return <div>Loading...</div>; 
-}
-const languageContent = content.english[0];
 
     return (
         <Box width={"400px"} alignSelf='center'>
@@ -67,8 +57,8 @@ const languageContent = content.english[0];
                         onChange={event => setMessage(event.target.value)}
                     />
                     <Box direction="row" gap="medium" style={{ paddingTop: "20px" }}>
-                        <Button a11yTitle={languageContent.SendMessageButton1} type="submit" primary label={languageContent.SendMessageButton1} className="mainButton" size='large' onClick={handleSumbit} />
-                        <Button a11yTitle={languageContent.SendMessageButton2} type="reset" label={languageContent.SendMessageButton2} className='mainButton' size='large' onClick={handleREset} />
+                        <Button a11yTitle={languageChoice.SendMessageButton1} type="submit" primary label={languageChoice.SendMessageButton1} className="mainButton" size='large' onClick={handleSumbit} />
+                        <Button a11yTitle={languageChoice.SendMessageButton2} type="reset" label={languageChoice.SendMessageButton2} className='mainButton' size='large' onClick={handleREset} />
                     </Box>
         </Box>
 

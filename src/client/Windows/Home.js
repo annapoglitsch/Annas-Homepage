@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
 import {
   Box,
   Image,
@@ -17,23 +16,22 @@ import "../style/main.css"
 import { Accessibility } from 'grommet-icons'
 import { useFetchLanguage } from "../static/UseEffect";
 
-function Home() {
+function Home({ language, setLanguage }) {
 
 
-const [languageChoice, setLanguageChoice] = useState("EN");
-
-const content = useFetchLanguage(languageChoice);
+const content = useFetchLanguage(language);
 
 
 if (!content) {
   return <div>Loading...</div>; 
 }
-const languageContent = content.english[0];
+const languageContent = content.language[0];
+
 
   return (
     <Grommet>
       <Page className="mainPage">
-        <HeaderTemp languageChoice={languageContent} />
+        <HeaderTemp languageChoice={languageContent} setLanguageChoice={setLanguage} />
         <PageHeader a11yTitle="Welcome" title={<Heading a11yTitle={languageContent.Willkommen} className="welcomeHome">{languageContent.Willkommen}</Heading>} margin={{ top: '13%' }} />
         
         <Box alignSelf="center" margin={{ left: '20%', top: '-4%' }}>

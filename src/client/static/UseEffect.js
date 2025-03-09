@@ -4,25 +4,31 @@ import "../style/home.css"
 import "../style/main.css"
 
 
-export const useFetchLanguage = (languageChoice) => {
+
+
+  export const useFetchLanguage = (language) => {
     const [content, setContent] = useState(null);
   
     useEffect(() => {
-      const fetchData = async () => {
+      const fetchLanguage = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/sendLanguageJSON?language=${languageChoice}`);
+          await fetch("http://localhost:5000/sendLanguage", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ selectedLanguage: language })
+          });
+  
+          const response = await fetch("http://localhost:5000/sendLanguageJSON");
           const data = await response.json();
           setContent(data);
-          console.log("MyDATR",data);
-        } catch (error) {
-          console.error("Error fetching language data:", error);
+        } catch (err) {
+          console.error("Fehler beim Laden der Sprache:", err);
         }
       };
   
-      if (languageChoice) {
-        fetchData();
-      }
-    }, [languageChoice]);
+      fetchLanguage();
+    }, [language]);
   
     return content;
   };
+  

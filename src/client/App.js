@@ -8,14 +8,16 @@ import Entries from "./Windows/MyWork"
 import Thoughts from "./Windows/AboutMe"
 
 const App = () => {
+
+  const [language, setLanguage] = useState("EN");
   
   return (
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact  />} />
-        <Route path="/mywork" element={<Entries  />} />
-        <Route path="/aboutme" element={<Thoughts  />} />
-        <Route path="/home" element={<Home  />} />
+        <Route path="/" element={<Home language={language} setLanguage={setLanguage}/>} />
+        <Route path="/contact" element={<Contact language={language} setLanguage={setLanguage} />} />
+        <Route path="/mywork" element={<Entries language={language} setLanguage={setLanguage} />} />
+        <Route path="/aboutme" element={<Thoughts language={language} setLanguage={setLanguage} />} />
+        <Route path="/home" element={<Home language={language} setLanguage={setLanguage} />} />
       </Routes>
   );
 }

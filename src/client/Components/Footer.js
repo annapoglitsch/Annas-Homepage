@@ -12,14 +12,8 @@ import { MailOption } from 'grommet-icons'
 import "../style/footer.css"
 import { useFetchLanguage } from "../static/UseEffect";
 
-function FooterTemp() {
-  const [languageChoice, setLanguageChoice] = useState("EN");
+function FooterTemp({languageChoice}) {
   
-  const content = useFetchLanguage(languageChoice);
-
-  if (!content) {
-    return <div>Loading...</div>; // Show loading state until the content is loaded
-  }
 
   return (
     <Footer className="footerMain">
@@ -28,7 +22,7 @@ function FooterTemp() {
         <Instagram a11yTitle="Link to Instagram" color="plain" />
         <MailOption a11yTitle="Contact me via Email" color="plain" />
       </Box>
-      <Anchor a11yTitle={content.FooterKontakt} className="footerText" label={content.FooterKontakt} />
+      <Anchor a11yTitle={languageChoice.FooterKontakt} className="footerText" label={languageChoice.FooterKontakt} />
     </Footer>
   );
 }

@@ -102,81 +102,25 @@ app.post('/mywork', async (req, res) => {
 
 });
 
-app.post("/sendLanguage", async (req, res) => {
-
+app.post("/sendLanguage", (req, res) => {
   const { selectedLanguage } = req.body;
-console.log("Selected language", selectedLanguage)
 
+  if (!selectedLanguage) return res.status(400).json({ message: "No language provided" });
 
-  const data = { selectedLanguage };
-  console.log("Received: ", data.selectedLanguage);
+  languageTemp = selectedLanguage.toUpperCase();
 
-  if (data.selectedLanguage === "EN") {
-    languageTemp = "EN";
-    res.status(200).json({ message: 'Data saved successfully' });
-  } else if (data.selectedLanguage === "DE") {
-    languageTemp = "DE";
-    res.status(200).json({ message: 'Data saved successfully' });
-  } else {
-    res.status(404).send("No language was found")
-  }
+  console.log("LanguageTemp:", languageTemp);
+  res.status(200).json({ message: "Language updated", language: languageTemp });
 });
-
-/*app.get("/sendLanguageJSON", async (req, res) => {
-  const filePath = path.join(__dirname, "English.json");
-  const filePathTwo = path.join(__dirname, "German.json");
-
-fs.readFile(filePath, "utf8", (error, data) => {
-  if(error){
-    return res.status(500).json({error: "Error with JSON File"})
-  }
-  res.json(JSON.parse(data));
-})
-  try {
-    let filePath = null;
-
-    if (languageTemp === "EN") {
-      filePath = path.join(__dirname, "./English.json");
-    } else if (languageTemp === "DE") {
-      filePath = path.join(__dirname, "./German.json");
-    } else {
-      return res.status(400).json({ error: "No valid language selected" });
-    }
-
-    const data = await fs.readFile(filePath, "utf8");
-    res.json(JSON.parse(data));
-  } catch (error) {
-    console.error("Error loading JSON file:", error);
-    res.status(500).json({ error: "Failed to load JSON file" });
-  }
-});*/
-
-const dataEN = "English.json";
-const dataDE = "German.json";
 
 app.get("/sendLanguageJSON", async (req, res) => {
   try {
-    const { language } = req.query;
-
-    if (!language) {
-      return res.status(400).json({ error: "No language selected" });
-    }
-
-    languageTemp = language.toUpperCase();
-    console.log("LanguageTemp:", languageTemp);
-
-    if (languageTemp === "EN") {
-      res.header("Content-Type", "application/json");
-      res.sendFile(path.resolve(dataEN)); 
-    } else if (languageTemp === "DE") {
-      res.header("Content-Type", "application/json");
-      res.sendFile(path.resolve(dataDE)); 
-    } else {
-      return res.status(400).json({ error: "Invalid language" });
-    }
-  } catch (error) {
-    console.error("Error loading JSON file:", error);
-    res.status(500).json({ error: "Failed to load JSON file" });
+    const filePath = path.join(__dirname, languageTemp === "DE" ? "German.json" : "English.json");
+    const data = await fs.readFile(filePath, "utf8");
+    res.header("Content-Type", "application/json").status(200).json(JSON.parse(data));
+  } catch (err) {
+    console.error("Error:", err);
+    res.status(500).json({ error: "Something went wrong with the json files." });
   }
 });
 

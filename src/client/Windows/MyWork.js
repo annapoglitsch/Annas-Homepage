@@ -15,7 +15,7 @@ import "../style/mywork.css"
 import "../style/main.css"
 import { useFetchLanguage } from "../static/UseEffect";
 
-function MyWork() {
+function MyWork({ language, setLanguage }) {
 
   const [searchValue, setSearchValue] = React.useState("");
   const [filterValue, setFilterValue] = React.useState([]);
@@ -24,36 +24,35 @@ function MyWork() {
     console.log("My Work: ", searchValue, filterValue)
   }, [searchValue, filterValue])
 
-const [languageChoice, setLanguageChoice] = useState("EN");
 
-const content = useFetchLanguage(languageChoice);
+  const content = useFetchLanguage(language);
 
 
-if (!content) {
-  return <div>Loading...</div>; 
-}
-const languageContent = content.english[0];
+  if (!content) {
+    return <div>Loading...</div>;
+  }
+  const languageContent = content.language[0];
 
   return (
     <Grommet >
       <Page className="mainPage">
         {/*Header */}
-        <HeaderTemp languageChoice={languageContent}></HeaderTemp>
-        
-         
-            <PageHeader a11yTitle={languageContent.TitelWork} title={
-              <Heading size="xlarge" className="myWorkTitle">{languageContent.TitelWork}</Heading>
-            } alignSelf="center" />
-            <Box style={{ direction: "column", }} gap={"medium"} alignSelf="center">
-              <h1 className="searchWork" a11yTitle={languageContent.UntertitelWork}>{languageContent.UntertitelWork}</h1>
-
-              <FilterTemp onSearch={setSearchValue} onFilterChange={setFilterValue}></FilterTemp>
-            </Box>
-            {/*Cards */}
-            <CardTemplate searchValue={searchValue} filterValue={filterValue}></CardTemplate>
+        <HeaderTemp languageChoice={languageContent} setLanguageChoice={setLanguage}></HeaderTemp>
 
 
-        
+        <PageHeader a11yTitle={languageContent.TitelWork} title={
+          <Heading size="xlarge" className="myWorkTitle">{languageContent.TitelWork}</Heading>
+        } alignSelf="center" />
+        <Box style={{ direction: "column", }} gap={"medium"} alignSelf="center">
+          <h1 className="searchWork" a11yTitle={languageContent.UntertitelWork}>{languageContent.UntertitelWork}</h1>
+
+          <FilterTemp onSearch={setSearchValue} onFilterChange={setFilterValue} languageChoice={languageContent}></FilterTemp>
+        </Box>
+        {/*Cards */}
+        <CardTemplate searchValue={searchValue} filterValue={filterValue}></CardTemplate>
+
+
+
 
         {/*Footer */}
         <FooterTemp languageChoice={languageContent}></FooterTemp>
