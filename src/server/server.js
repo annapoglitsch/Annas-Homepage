@@ -3,7 +3,7 @@ import cors from "cors";
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-import { checkIfEmailisValid } from './logic/logicFun.js';
+import { checkIfEmailisValid, checkTextComplexity } from './Test/cognitiveTest.js';
 import { error } from "console";
 const app = express();
 
@@ -87,12 +87,16 @@ app.post('/mywork', async (req, res) => {
     const filteredCards = data.cards.filter(card =>
       card.header.toLowerCase().includes(searchInput.toLowerCase()) ||
       card.body.toLowerCase().includes(searchInput.toLowerCase()) ||
-      card.filter == filterValue[0] ||
-      card.filter == filterValue[1]
+      card.category == filterValue[0] ||
+      card.category == filterValue[1]
     );
 
     console.log("FilteredCards:", filteredCards);
 
+    for(let i=0; i < filterValue.length; i++){
+      checkTextComplexity(filterValue[i]);
+    }
+    
     res.status(200).json(filteredCards);
 
   } catch (error) {

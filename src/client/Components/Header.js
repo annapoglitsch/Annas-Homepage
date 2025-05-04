@@ -65,7 +65,7 @@ function HeaderTemp({languageChoice, setLanguageChoice}) {
           />
         </Box>
   
-        <Box margin={"30px"}>
+        <Box margin={"40px"} style={{height: "auto", width: "auto"}}>
           <ToggleGroup
             a11yTitle="Toggle Between English and German, current language"
             options={options}

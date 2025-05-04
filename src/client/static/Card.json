@@ -3,37 +3,69 @@
         "header": "Bachelor CSDC",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "footer": "05.02.2025",
-        "filter": "Hobby"
+        "category": "Projects",
+        "time": "05.02.2025",
+        "location": "FH Campus Wien"
     },
     {
         "header": "Bachelor Thesis",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "footer": "04.02.2025",
-        "filter": "Hobby"
+        "category": "Projects",
+        "time": "04.02.2025",
+        "location": "FH Campus Wien"
+
     },
     {
-        "header": "Bachelor Thesis",
+        "header": "Pilates Reformer",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "footer": "23.01.2025",
-        "filter": "Hobby"
+        "category": "Pilates",
+        "time": "23.01.2025",
+        "location": "Opernring 1"
+
     },
     {
-        "header": "Bachelor Thesis",
+        "header": "Instagram",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "footer": "02.02.2025",
-        "filter": "Projects"
+        "category": "Social Media",
+        "time": "02.02.2025",
+        "location": ""
     },
     {
-       "header": "Bachelor CSDC",
+        "header": "Facebook",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "15.02.2025",
+        "category": "Social Media",
+        "time": "15.02.2025",
+        "location": ""
+
+    },
+    {
+       "header": "Sommerlager",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "footer": "02.01.2025",
-        "filter": "Projects"
+        "category": "Jungschar",
+        "time": "02.01.2025",
+        "location": "Waldviertel"
+
     },
     {
-        "header": "Bachelor Thesis",
+        "header": "Okay Days.",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "footer": "10.01.2025",
-        "filter": "Projects"
+        "category": "Books",
+        "time": "10.01.2025",
+        "location": ""
+    },
+    {
+        "header": "Beach Read.",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "19.01.2025",
+        "category": "Books",
+        "time": "19.01.2025",
+        "location": ""
     }
     ]
 }
