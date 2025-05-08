@@ -3,7 +3,7 @@ import cors from "cors";
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-import { checkIfEmailisValid, checkTextComplexity } from './Test/cognitiveTest.js';
+import { checkIfEmailisValid, checkTextComplexity, checkNumberOfIAOptions, checkNumberOfIAElements } from './Test/cognitiveTest.js';
 import { error } from "console";
 const app = express();
 
@@ -63,12 +63,12 @@ app.post('/contact', async (req, res) => {
 
 app.post('/mywork', async (req, res) => {
   let { searchInput, filterValue } = req.body;
-  console.log(req.body)
+//  console.log(req.body)
 
   const filePath = path.resolve(__dirname, "../client/static/Card.json");
 
-  console.log("SERVEr:", searchInput);
-  console.log("FiltaerValue:", filterValue);
+ // console.log("SERVEr:", searchInput);
+ // console.log("FiltaerValue:", filterValue);
 
   try {
     const fileData = await fs.readFile(filePath, "utf8");
@@ -76,27 +76,33 @@ app.post('/mywork', async (req, res) => {
 
     if (searchInput == "" && filterValue.length == 0) {
       return res.status(200).json(data.cards)
+
     }
 
     if (searchInput == "") {
       searchInput = "pseudoInput";
     }
 
-    console.log("Searchinpuuut: ", searchInput);
+   // console.log("Searchinpuuut: ", searchInput);
+
+    
 
     const filteredCards = data.cards.filter(card =>
       card.header.toLowerCase().includes(searchInput.toLowerCase()) ||
       card.body.toLowerCase().includes(searchInput.toLowerCase()) ||
-      card.category == filterValue[0] ||
-      card.category == filterValue[1]
+      filterValue.includes(card.category)
     );
 
-    console.log("FilteredCards:", filteredCards);
+  // console.log("FilteredCards:", filteredCards);
+    //console.log(data.cards)
 
-    for(let i=0; i < filterValue.length; i++){
+    checkNumberOfIAOptions(data.cards);
+    checkNumberOfIAElements(filteredCards);
+
+    for (let i = 0; i < filterValue.length; i++) {
       checkTextComplexity(filterValue[i]);
     }
-    
+
     res.status(200).json(filteredCards);
 
   } catch (error) {

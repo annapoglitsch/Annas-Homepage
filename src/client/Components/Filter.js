@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Toolbar, TextInput, Button, Box, CheckBoxGroup, DropButton } from "grommet";
-import { Search } from "grommet-icons";
+import { Projects, Search } from "grommet-icons";
 import { Filter } from "grommet-icons";
 import "../style/main.css"
 import "../style/mywork.css"

@@ -3,25 +3,34 @@
         "header": "Bachelor CSDC",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "footer": "05.02.2025",
-        "category": "Projects",
+        "category": "Projects",  
         "time": "05.02.2025",
         "location": "FH Campus Wien"
     },
     {
-        "header": "Bachelor Thesis",
+        "header": "Bachelor Thesis One",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "04.02.2025",
+        "footer": "02.04.2025",
         "category": "Projects",
-        "time": "04.02.2025",
+        "time": "02.04.2025",
+        "location": "FH Campus Wien"
+
+    },
+    {
+        "header": "Bachelor Thesis Two",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "02.04.2025",
+        "category": "Projects",
+        "time": "02.04.2025",
         "location": "FH Campus Wien"
 
     },
     {
         "header": "Pilates Reformer",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "23.01.2025",
+        "footer": "01.23.2025",
         "category": "Pilates",
-        "time": "23.01.2025",
+        "time": "01.23.2025",
         "location": "Opernring 1"
 
     },
@@ -36,35 +45,35 @@
     {
         "header": "Facebook",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "15.02.2025",
+        "footer": "02.15.2025",
         "category": "Social Media",
-        "time": "15.02.2025",
+        "time": "02.15.2025",
         "location": ""
 
     },
     {
        "header": "Sommerlager",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "02.01.2025",
+        "footer": "01.02.2025",
         "category": "Jungschar",
-        "time": "02.01.2025",
-        "location": "Waldviertel"
+        "time": "01.02.2025",
+        "location": "Forest Quarter"
 
-    },
-    {
-        "header": "Okay Days.",
-        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "10.01.2025",
-        "category": "Books",
-        "time": "10.01.2025",
-        "location": ""
     },
     {
         "header": "Beach Read.",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "19.01.2025",
+        "footer": "01.19.2025",
         "category": "Books",
-        "time": "19.01.2025",
+        "time": "01.19.2025",
+        "location": ""
+    },
+    {
+        "header": "Okay Days.",
+        "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "footer": "01.10.2025",
+        "category": "Books",
+        "time": "01.10.2025",
         "location": ""
     }
     ]

@@ -1,3 +1,4 @@
+import { Duplicate } from "grommet-icons";
 import {syllable} from "syllable"
 
 export function checkIfEmailisValid(email) {
@@ -11,20 +12,43 @@ export function checkIfEmailisValid(email) {
 }
 
 export function checkTextComplexity(text){
+
   //  console.log("TEXXT", text)
    const totalwords = countWordsinSentence(text);
    const totalSentences = countSentencesInText(text);
    const averageSyllables = averageSyllablesPerWord(text);
 
-  /* Testsyll(text);
+   Testsyll(text);
     console.log("TotalW: ", totalwords)
     console.log("TotalS: ", totalSentences)
-    console.log("averageSyl: ", averageSyllables)*/
+    console.log("averageSyl: ", averageSyllables)
 
    const averageWordsPerSentence = totalSentences === 0 ? totalwords : totalwords / totalSentences;
+const FleschReadingEase = 206.835 - (1.015 * averageWordsPerSentence) - (84.6 * averageSyllables)
+   //const FleschReadingEase = (0.39*averageWordsPerSentence) + (11.8*averageSyllables) - 15.9
+   console.log("FleschReadingEase", FleschReadingEase.toFixed(2))
 
-   const FleschKincaid = (0.39*averageWordsPerSentence) + (11.8*averageSyllables) - 15.9
-   console.log("FleschKincaid", FleschKincaid.toFixed(2))
+   if (FleschReadingEase > 100){
+    console.log("Die Flesch Reading Ease Punktezahl liegt bei", FleschReadingEase.toFixed(2), "und ist somit überhalb der Tabelle. Dieser Text ist sehr einfach zu verstehen.")
+   } else if (FleschReadingEase >= 90 && FleschReadingEase <= 100) {
+      console.log("Die Flesch Reading Ease Punktezahl liegt bei", FleschReadingEase.toFixed(2), "und wird somit von Schüler*innen in der 5. amerikansichen Schulstufe verstanden. Dieser Text ist einfach zu verstehen.")
+   } else if (FleschReadingEase >= 80 && FleschReadingEase < 90) {
+     console.log("Die Flesch Reading Ease Punktezahl liegt bei", FleschReadingEase.toFixed(2), "und wird somit von Schüler*innen in der 6. amerikansichen Schulstufe verstanden. Dieser Text ist einfach zu verstehen.")
+   } else if (FleschReadingEase >= 70 && FleschReadingEase < 80){
+     console.log("Die Flesch Reading Ease Punktezahl liegt bei", FleschReadingEase.toFixed(2), "und wird somit von Schüler*innen in der 7. amerikansichen Schulstufe verstanden. Dieser Text ist gerade noch einfach zu verstehen.")
+   } else if (FleschReadingEase >= 60 && FleschReadingEase < 70){
+      console.log("Die Flesch Reading Ease Punktezahl liegt bei", FleschReadingEase.toFixed(2), "und wird somit von Schüler*innen in der 8. und 9. amerikansichen Schulstufe verstanden. Dieser Text ist für 13. bis 15. Jährige einfach zu verstehen.")
+   } else if (FleschReadingEase >= 50 && FleschReadingEase < 60){
+      console.log("Die Flesch Reading Ease Punktezahl liegt bei", FleschReadingEase.toFixed(2), "und wird somit von Schüler*innen in der 10. bis 12. amerikansichen Schulstufe verstanden. Dieser Text ist ein wenig Schwierig zu verstehen.")
+   } else if (FleschReadingEase >= 30 && FleschReadingEase < 50){
+     console.log("Die Flesch Reading Ease Punktezahl liegt bei", FleschReadingEase.toFixed(2), "und wird somit von Personen im College verstanden. Dieser Text ist schwierig zu verstehen.")
+   } else if (FleschReadingEase >= 10 && FleschReadingEase < 30){
+      console.log("Die Flesch Reading Ease Punktezahl liegt bei", FleschReadingEase.toFixed(2), "und wird somit von Absolvent*innen des College verstanden. Dieser Text ist sehr schwer zu verstehen.")
+   } else if (FleschReadingEase >= 0 && FleschReadingEase < 10){
+      console.log("Die Flesch Reading Ease Punktezahl liegt bei", FleschReadingEase.toFixed(2), "und wird somit von Absolvent*innen einer Universität verstanden. Dieser Text ist extrem schwer zu verstehen.")
+   } else if (FleschReadingEase < 0){
+      console.log("Die Flesch Reading Ease Punktezahl liegt bei", FleschReadingEase.toFixed(2), "und ist somit unterhalb der Tabelle. Dieser Text ist kaum zu verstehen.")
+   } 
 }
 
 function countWordsinSentence(text){
@@ -51,4 +75,48 @@ function averageSyllablesPerWord(text){
 
 function Testsyll(text){
     console.log("JOOO", syllable(text))
+}
+
+export function checkNumberOfIAOptions(filteredCards){
+    let  categoryArray = [];
+
+    for(let i = 0; i < filteredCards.length; i++){
+         const category = filteredCards[i].category
+        if (!categoryArray.includes(category)){
+            categoryArray.push(category)
+        }
+    }
+
+    if (categoryArray.length > 7){
+        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", categoryArray.length, " und fällt somit unter `Nicht Genügend´.")
+    } else if (categoryArray.length === 6 || categoryArray.length === 7){
+        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", categoryArray.length, " und fällt somit unter `Genügend´.")
+    } else if (categoryArray.length === 4 || categoryArray.length === 5){
+        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", categoryArray.length, " und fällt somit unter `Befriedigend.")
+    } else if (categoryArray.length === 2 || categoryArray.length === 3){
+        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", categoryArray.length, " und fällt somit unter `Gut´.")
+    } else if (categoryArray.length === 1){
+        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", categoryArray.length, " und fällt somit unter `Sehr Gut´.")
+    }
+}
+
+export function checkNumberOfIAElements(filteredCards){
+  //  let  newcardsarray = [];
+
+  /*  for(let i = 0; i < filteredCards.length; i++){
+            newcardsarray.push(filteredCards[i])
+        
+    }*/
+
+    if (filteredCards.length > 7){
+          console.log("Die Anzahl der Informationsarchitekturelemente liegt bei ", filteredCards.length, " und fällt somit unter `Nicht Genügend´.")
+    } else if (filteredCards.length === 6 || filteredCards.length === 7){
+          console.log("Die Anzahl der Informationsarchitekturelemente liegt bei ", filteredCards.length, " und fällt somit unter `Genügend´.")
+    } else if (filteredCards.length === 4 || filteredCards.length === 5){
+         console.log("Die Anzahl der Informationsarchitekturelemente liegt bei ", filteredCards.length, " und fällt somit unter `Befriedigend.")
+    } else if (filteredCards.length === 2 || filteredCards.length === 3){
+          console.log("Die Anzahl der Informationsarchitekturelemente liegt bei ", filteredCards.length, " und fällt somit unter `Gut´.")
+    } else if (filteredCards.length === 1){
+           console.log("Die Anzahl der Informationsarchitekturelemente liegt bei ", filteredCards.length, " und fällt somit unter `Sehr Gut´.")
+    }
 }
