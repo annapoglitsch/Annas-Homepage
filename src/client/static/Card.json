@@ -2,79 +2,79 @@
     "cards":[{
         "header": "Bachelor CSDC",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "05.02.2025",
+        "footer": "2025.05.02",
         "category": "Projects",  
-        "time": "05.02.2025",
+        "time": "2025.05.02",
         "location": "FH Campus Wien"
     },
     {
         "header": "Bachelor Thesis One",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "02.04.2025",
+        "footer": "2025.02.04",
         "category": "Projects",
-        "time": "02.04.2025",
+        "time": "2025.02.04",
         "location": "FH Campus Wien"
 
     },
     {
         "header": "Bachelor Thesis Two",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "02.04.2025",
+        "footer": "2025.02.05",
         "category": "Projects",
-        "time": "02.04.2025",
+        "time": "2025.02.05",
         "location": "FH Campus Wien"
 
     },
     {
         "header": "Pilates Reformer",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "01.23.2025",
+        "footer": "2025.01.23",
         "category": "Pilates",
-        "time": "01.23.2025",
+        "time": "2025.01.23",
         "location": "Opernring 1"
 
     },
     {
         "header": "Instagram",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "02.02.2025",
+        "footer": "2025.02.02",
         "category": "Social Media",
-        "time": "02.02.2025",
-        "location": ""
+        "time": "2025.02.02",
+        "location": "No location"
     },
     {
         "header": "Facebook",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "02.15.2025",
+        "footer": "2025.02.15",
         "category": "Social Media",
-        "time": "02.15.2025",
-        "location": ""
+        "time": "2025.02.15",
+        "location": "No location"
 
     },
     {
        "header": "Sommerlager",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "01.02.2025",
+        "footer": "2025.01.02",
         "category": "Jungschar",
-        "time": "01.02.2025",
+        "time": "2025.01.02",
         "location": "Forest Quarter"
 
     },
     {
         "header": "Beach Read.",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "01.19.2025",
+        "footer": "2025.01.19",
         "category": "Books",
-        "time": "01.19.2025",
-        "location": ""
+        "time": "2025.01.19",
+        "location": "No location"
     },
     {
         "header": "Okay Days.",
         "body": "Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "footer": "01.10.2025",
+        "footer": "2025.01.10",
         "category": "Books",
-        "time": "01.10.2025",
-        "location": ""
+        "time": "2025.01.10",
+        "location": "No location"
     }
     ]
 }

@@ -85,18 +85,34 @@ app.post('/mywork', async (req, res) => {
 
    // console.log("Searchinpuuut: ", searchInput);
 
-    
+    console.log("filtervalule", filterValue)
+ /*card.header.toLowerCase().includes(searchInput.toLowerCase()) ||
+      card.body.toLowerCase().includes(searchInput.toLowerCase()) ||*/
+      let filteredCards = data.cards.filter(card =>
+     
+      filterValue.includes(card.category) ||
+      filterValue.includes(card.location))
+      
+       if(filterValue.includes("A-Z")){
+      filteredCards =  data.cards.sort((a,b) => a.header.localeCompare(b.header))
+    } else if (filterValue.includes("Z-A")){
+      filteredCards =  data.cards.sort((a,b) => b.header.localeCompare(a.header))
+    }
 
-    const filteredCards = data.cards.filter(card =>
-      card.header.toLowerCase().includes(searchInput.toLowerCase()) ||
-      card.body.toLowerCase().includes(searchInput.toLowerCase()) ||
-      filterValue.includes(card.category)
-    );
+     if (filterValue.includes("Newest one first") && filterValue.includes("Oldest one first")){
+      filteredCards = data.cards
+    }
+   else if(filterValue.includes("Newest one first")){
+      filteredCards =  data.cards.sort((a,b) => new Date(b.time) - new Date(a.time))
+    } else if (filterValue.includes("Oldest one first")){
+      filteredCards =  data.cards.sort((a,b) => new Date(a.time) - new Date(b.time))
+    } 
+    
 
   // console.log("FilteredCards:", filteredCards);
     //console.log(data.cards)
 
-    checkNumberOfIAOptions(data.cards);
+    checkNumberOfIAOptions(filterValue);
     checkNumberOfIAElements(filteredCards);
 
     for (let i = 0; i < filterValue.length; i++) {

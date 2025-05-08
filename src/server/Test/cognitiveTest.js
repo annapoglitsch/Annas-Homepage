@@ -22,8 +22,9 @@ export function checkTextComplexity(text){
     console.log("TotalW: ", totalwords)
     console.log("TotalS: ", totalSentences)
     console.log("averageSyl: ", averageSyllables)
-
+    
    const averageWordsPerSentence = totalSentences === 0 ? totalwords : totalwords / totalSentences;
+
 const FleschReadingEase = 206.835 - (1.015 * averageWordsPerSentence) - (84.6 * averageSyllables)
    //const FleschReadingEase = (0.39*averageWordsPerSentence) + (11.8*averageSyllables) - 15.9
    console.log("FleschReadingEase", FleschReadingEase.toFixed(2))
@@ -52,7 +53,7 @@ const FleschReadingEase = 206.835 - (1.015 * averageWordsPerSentence) - (84.6 * 
 }
 
 function countWordsinSentence(text){
-    const textArray = text.trim().split(/\s+/).filter(word => word.length > 0);
+    const textArray = text.trim().replace(/[.,!?;:()"]/g, '').split(/\s+/).filter(word => word.length > 0);
     return textArray.length;
 }
 
@@ -77,36 +78,30 @@ function Testsyll(text){
     console.log("JOOO", syllable(text))
 }
 
-export function checkNumberOfIAOptions(filteredCards){
-    let  categoryArray = [];
+export function checkNumberOfIAOptions(cards){
+  /*  let  categoryArray = [];
 
-    for(let i = 0; i < filteredCards.length; i++){
-         const category = filteredCards[i].category
+    for(let i = 0; i < cards.length; i++){
+         const category = cards[i].category
         if (!categoryArray.includes(category)){
             categoryArray.push(category)
         }
-    }
+    }*/
 
-    if (categoryArray.length > 7){
-        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", categoryArray.length, " und fällt somit unter `Nicht Genügend´.")
-    } else if (categoryArray.length === 6 || categoryArray.length === 7){
-        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", categoryArray.length, " und fällt somit unter `Genügend´.")
-    } else if (categoryArray.length === 4 || categoryArray.length === 5){
-        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", categoryArray.length, " und fällt somit unter `Befriedigend.")
-    } else if (categoryArray.length === 2 || categoryArray.length === 3){
-        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", categoryArray.length, " und fällt somit unter `Gut´.")
-    } else if (categoryArray.length === 1){
-        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", categoryArray.length, " und fällt somit unter `Sehr Gut´.")
+    if (cards.length > 7){
+        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", cards.length, " und fällt somit unter `Nicht Genügend´.")
+    } else if (cards.length === 6 || cards.length === 7){
+        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", cards.length, " und fällt somit unter `Genügend´.")
+    } else if (cards.length === 4 || cards.length === 5){
+        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", cards.length, " und fällt somit unter `Befriedigend.")
+    } else if (cards.length === 2 || cards.length === 3){
+        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", cards.length, " und fällt somit unter `Gut´.")
+    } else if (cards.length === 1){
+        console.log("Die Anzahl der Filterauswahlmöglichkeiten liegt bei ", cards.length, " und fällt somit unter `Sehr Gut´.")
     }
 }
 
 export function checkNumberOfIAElements(filteredCards){
-  //  let  newcardsarray = [];
-
-  /*  for(let i = 0; i < filteredCards.length; i++){
-            newcardsarray.push(filteredCards[i])
-        
-    }*/
 
     if (filteredCards.length > 7){
           console.log("Die Anzahl der Informationsarchitekturelemente liegt bei ", filteredCards.length, " und fällt somit unter `Nicht Genügend´.")
